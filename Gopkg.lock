@@ -28,7 +28,7 @@
 [[projects]]
   name = "github.com/godbus/dbus"
   packages = ["."]
-  revision = "66d97aec3384421e393c2a76b770a1b5c31d07a8"
+  revision = "2ff6f7ffd60f0f2410b3105864bdd12c7894f844"
   version = "v5.0"
 
 [[projects]]
@@ -70,6 +70,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "7445be9a7f6dbee9a533197bb8600d1a2f1bc15b60ed538d109c6f623eb222f8"
+  inputs-digest = "0a0424911fa8bfb2cb1b52f8e4cff60396a3803cd18a0901eeca32ac0ced226e"
   solver-name = "gps-cdcl"
   solver-version = 1
