@@ -12,7 +12,7 @@ Lyricfier2 is a rewrite of the old lyricfier using Golang and nuklear bindings f
 
 
 ```bash
-$ sudo apt go-dep install xorg-dev libgl1-mesa-dev
+$ sudo apt install golang-go go-dep xorg-dev libgl1-mesa-dev
 $ git clone git@github.com:emilioastarita/lyricfier2.git
 $ cd lyricfier2
 $ dep ensure 
