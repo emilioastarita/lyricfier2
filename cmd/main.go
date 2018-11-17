@@ -3,17 +3,13 @@ package main
 import (
 	"github.com/emilioastarita/lyricfier2/internal/gui"
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
-	"github.com/go-gl/gl/v3.2-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/golang-ui/nuklear/nk"
 	"runtime"
 	"time"
 )
 
-const (
-	winWidth  = 400
-	winHeight = 500
-)
+
 
 func init() {
 	runtime.LockOSThread()
@@ -22,26 +18,11 @@ func init() {
 var lyricfierMain *lyricfier.Main
 
 func main() {
-
-	if err := glfw.Init(); err != nil {
-		panic(err)
+	icons := [][]byte{
+		MustAsset("assets/icon.png"),
+		MustAsset("assets/icon-small.png"),
 	}
-	glfw.WindowHint(glfw.ContextVersionMajor, 3)
-	glfw.WindowHint(glfw.ContextVersionMinor, 2)
-	glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
-	glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
-	win, err := glfw.CreateWindow(winWidth, winHeight, "Lyricfier 2", nil, nil)
-	if err != nil {
-		panic(err)
-	}
-	win.MakeContextCurrent()
-
-	width, height := win.GetSize()
-	if err := gl.Init(); err != nil {
-		panic(err)
-	}
-	gl.Viewport(0, 0, int32(width), int32(height))
-
+	win := gui.CreateWindow(icons)
 	ctx := nk.NkPlatformInit(win, nk.PlatformInstallCallbacks)
 
 	atlas := nk.NewFontAtlas()

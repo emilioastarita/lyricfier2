@@ -1,16 +1,22 @@
 package gui
 
 import (
+	"bytes"
+	"fmt"
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
 	"github.com/go-gl/gl/v3.2-core/gl"
 	"github.com/go-gl/glfw/v3.2/glfw"
 	"github.com/golang-ui/nuklear/nk"
+	"image"
+     _ "image/png"
 	"strings"
 )
 
 const (
 	maxVertexBuffer  = 512 * 1024
 	maxElementBuffer = 128 * 1024
+	winWidth         = 400
+	winHeight        = 500
 )
 
 var Colors = struct {
@@ -37,7 +43,6 @@ func AddLyric(ctx *nk.Context, text string) {
 		nk.NkLabelColored(ctx, line, nk.TextLeft, Colors.Body)
 	}
 }
-
 
 func GfxMain(win *glfw.Window, ctx *nk.Context, lyricfierMain *lyricfier.Main) {
 	nk.NkPlatformNewFrame()
@@ -72,4 +77,44 @@ func GfxMain(win *glfw.Window, ctx *nk.Context, lyricfierMain *lyricfier.Main) {
 	gl.ClearColor(bg[0], bg[1], bg[2], bg[3])
 	nk.NkPlatformRender(nk.AntiAliasingOn, maxVertexBuffer, maxElementBuffer)
 	win.SwapBuffers()
+}
+
+func setIcons(win *glfw.Window, iconsBytes [][]byte) {
+	images := make([]image.Image, len(iconsBytes), len(iconsBytes))
+	for i := range iconsBytes {
+		var (
+			t string
+			err error
+		);
+		images[i], t, err = image.Decode(bytes.NewReader(iconsBytes[i]))
+		if err != nil {
+			panic(err)
+		}
+		fmt.Println("type: ", t)
+	}
+	win.SetIcon(images)
+}
+
+func CreateWindow(icons [][]byte) *glfw.Window {
+	if err := glfw.Init(); err != nil {
+		panic(err)
+	}
+
+	glfw.WindowHint(glfw.ContextVersionMajor, 3)
+	glfw.WindowHint(glfw.ContextVersionMinor, 2)
+	glfw.WindowHint(glfw.OpenGLProfile, glfw.OpenGLCoreProfile)
+	glfw.WindowHint(glfw.OpenGLForwardCompatible, glfw.True)
+	win, err := glfw.CreateWindow(winWidth, winHeight, "Lyricfier 2", nil, nil)
+	setIcons(win, icons)
+	if err != nil {
+		panic(err)
+	}
+	win.MakeContextCurrent()
+
+	width, height := win.GetSize()
+	if err := gl.Init(); err != nil {
+		panic(err)
+	}
+	gl.Viewport(0, 0, int32(width), int32(height))
+	return win
 }
