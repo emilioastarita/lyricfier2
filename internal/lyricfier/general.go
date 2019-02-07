@@ -3,6 +3,7 @@ package lyricfier
 import (
 	"github.com/emilioastarita/lyricfier2/internal/search"
 	"strings"
+	"regexp"
 )
 
 type Song struct {
@@ -96,14 +97,13 @@ func (h *Main) Search(done chan *SearchResult, artist string, title string) {
 	done <- s
 }
 
+
+var ignoreParts = regexp.MustCompile(`(?i)remastered|bonus track|remasterizado|live|remaster`)
 func normalizeTitle(title string) string {
 	parts := strings.Split(title, "-")
 	if len(parts) == 2 {
 		check := strings.ToLower(parts[1])
-		if strings.Contains(check, "remastered") ||
-			strings.Contains(check, "bonus track") ||
-			strings.Contains(check, "remasterizado") ||
-			strings.Contains(check, "live") {
+		if ignoreParts.MatchString(check) {
 			return strings.Trim(parts[0], " ")
 		}
 	}

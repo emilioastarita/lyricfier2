@@ -10,6 +10,10 @@ var titlesTables = []struct {
 }{
 	{"Cuando Pase El Temblor - Remasterizado 2007", "Cuando Pase El Temblor"},
 	{"Girl - Remastered 2009", "Girl"},
+	{"Girl - Bonus Track", "Girl"},
+	{"Girl - bonus track", "Girl"},
+	{"Girl - Live", "Girl"},
+	{"Mary Jane - 2015 Remaster", "Mary Jane"},
 }
 
 func TestFlagParser(t *testing.T) {
