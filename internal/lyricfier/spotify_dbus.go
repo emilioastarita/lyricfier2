@@ -33,12 +33,14 @@ func (h *SpotifyDbus) GetMetadata(newSong chan *Song) {
 		return
 	}
 	m, ok := res.Value().(map[string]dbus.Variant)
-
 	if ok {
+		artists := m["xesam:artist"].Value().([]string)
 		metadata.ArtUrl = m["mpris:artUrl"].Value().(string)
-		metadata.Artist = m["xesam:artist"].Value().([]string)[0]
+		metadata.Artist = ""
+		if len(artists) > 0 {
+			metadata.Artist = artists[0]
+		}
 		metadata.Title = m["xesam:title"].Value().(string)
 		newSong <- metadata
 	}
-
 }
