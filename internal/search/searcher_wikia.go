@@ -35,7 +35,6 @@ func wikiaSearchSongUrl(artist string, title string) (string, error) {
 	v.Add("fmt", "json")
 	v.Add("func", "getSong")
 	var searchUrl = "http://lyrics.wikia.com/api.php?" + v.Encode()
-	fmt.Println("Lookup", searchUrl)
 	response, err := client.Get(searchUrl)
 	if err != nil {
 		return "", err

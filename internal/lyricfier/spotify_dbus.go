@@ -7,9 +7,9 @@ import (
 )
 
 type SpotifyDbus struct {
-	conn    *dbus.Conn
-	bus     dbus.BusObject
-	Changes chan *dbus.Signal
+	conn *dbus.Conn
+	bus  dbus.BusObject
+	ch   chan *dbus.Signal
 }
 
 func (h *SpotifyDbus) Init() {
@@ -20,8 +20,8 @@ func (h *SpotifyDbus) Init() {
 	h.conn = conn
 	h.bus = conn.Object("org.mpris.MediaPlayer2.spotify", "/org/mpris/MediaPlayer2")
 	h.bus.AddMatchSignal("org.freedesktop.DBus.Properties", "PropertiesChanged", dbus.WithMatchObjectPath(h.bus.Path()))
-	h.Changes = make(chan *dbus.Signal)
-	h.conn.Signal(h.Changes)
+	h.ch = make(chan *dbus.Signal)
+	h.conn.Signal(h.ch)
 }
 
 func (h *SpotifyDbus) GetMetadata(newSong chan *Song) {
@@ -42,5 +42,14 @@ func (h *SpotifyDbus) GetMetadata(newSong chan *Song) {
 		}
 		metadata.Title = m["xesam:title"].Value().(string)
 		newSong <- metadata
+	}
+}
+
+func (h *SpotifyDbus) Ticker(changes chan string) {
+	for {
+		select {
+		case <-h.ch:
+			changes <- "yes"
+		}
 	}
 }

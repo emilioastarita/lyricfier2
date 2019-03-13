@@ -27,18 +27,14 @@ func geniusSearchUrl(artist string, title string) (string, error) {
 		fmt.Println(err)
 		return "", err
 	}
-
-	fmt.Println(string(all))
-
 	status := gjson.Get(string(all), "meta.status").Int()
-	fmt.Println("status is", status)
 	if status != 200 {
 		fmt.Println("no status", status)
 		return url, errors.New("not found")
 	}
 	res := gjson.Get(string(all), `response.sections.#[type=="song"].hits.0.result.url`)
 	if !res.Exists() {
-		return "",  errors.New("not found")
+		return "", errors.New("not found")
 	}
 	return res.String(), nil
 }

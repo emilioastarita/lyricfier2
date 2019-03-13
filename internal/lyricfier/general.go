@@ -1,9 +1,10 @@
 package lyricfier
 
 import (
+	"github.com/emilioastarita/lyricfier2/internal/gui"
 	"github.com/emilioastarita/lyricfier2/internal/search"
-	"strings"
 	"regexp"
+	"strings"
 )
 
 type Song struct {
@@ -22,7 +23,7 @@ type SearchResult struct {
 }
 
 type Main struct {
-	Conn               SpotifyDbus
+	Detector           DetectCurrentSong
 	NewSongChannel     chan *Song
 	LyricSearchChannel chan *SearchResult
 	Current            *Song
@@ -32,10 +33,10 @@ type Main struct {
 }
 
 func (h *Main) Init() {
-	h.Conn = SpotifyDbus{}
+	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
 	h.SpotifyRunning = false
-	h.Conn.Init()
+	h.Detector.Init()
 	h.NewSongChannel = make(chan *Song)
 	h.LyricSearchChannel = make(chan *SearchResult)
 }
@@ -54,7 +55,7 @@ func (h *Main) Lookup() {
 	}
 	h.lock()
 	defer h.unlock()
-	go h.Conn.GetMetadata(h.NewSongChannel)
+	go h.Detector.GetMetadata(h.NewSongChannel)
 }
 
 func (h *Main) ReceiveSong(newSong *Song) {
@@ -70,6 +71,8 @@ func (h *Main) ReceiveSong(newSong *Song) {
 			return
 		}
 		h.Searching = true
+		gui.SetArtist(newSong.Artist)
+		gui.SetTitle(newSong.Title)
 		go h.Search(h.LyricSearchChannel, newSong.Artist, newSong.Title)
 	}
 }
@@ -79,6 +82,7 @@ func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 		h.Current.Lyric = newLyric.Lyric
 		h.Current.LyricFound = newLyric.Found
 		h.Current.Source = newLyric.Source
+		gui.SetLyric(newLyric.Lyric)
 	}
 }
 
@@ -97,8 +101,8 @@ func (h *Main) Search(done chan *SearchResult, artist string, title string) {
 	done <- s
 }
 
-
 var ignoreParts = regexp.MustCompile(`(?i)remastered|bonus track|remasterizado|live|remaster`)
+
 func normalizeTitle(title string) string {
 	parts := strings.Split(title, "-")
 	if len(parts) == 2 {
