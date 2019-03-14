@@ -4,7 +4,6 @@ import (
 	"github.com/emilioastarita/lyricfier2/internal/gui"
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
 	"runtime"
-	"time"
 )
 
 func init() {
@@ -18,8 +17,6 @@ func main() {
 	exitC := make(chan struct{}, 1)
 	doneC := make(chan struct{}, 1)
 
-	fpsTicker := time.NewTicker(time.Second / 30)
-
 	lyricfierMain = &lyricfier.Main{}
 	lyricfierMain.Init()
 	lyricfierMain.Lookup()
@@ -29,8 +26,6 @@ func main() {
 			case <-exitC:
 				close(doneC)
 				return
-			case <-fpsTicker.C:
-
 			case <-lyricfierMain.Detector.Changes:
 				lyricfierMain.Lookup()
 			case s := <-lyricfierMain.NewSongChannel:
@@ -38,7 +33,6 @@ func main() {
 			case l := <-lyricfierMain.LyricSearchChannel:
 				lyricfierMain.ReceiveLyric(l)
 			}
-
 		}
 	}()
 	gui.Main()

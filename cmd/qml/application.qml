@@ -24,10 +24,15 @@ Item {
                     text: song.artist
                     color: "#028090"
             }
-            TextArea {
+            TextEdit {
                 id: lyric
+                Layout.margins: 5
                 color: "#e4fde1"
                 text: song.lyric
+                readOnly: true
+                wrapMode: Text.WordWrap
+                selectByMouse: true
+                font { pixelSize: 13 }
             }
         }
     }

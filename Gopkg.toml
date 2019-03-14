@@ -1,5 +1,5 @@
 
-ignored = ["golang.org/x/text", "golang.org/x/sys", "golang.org/x/net", "go"]
+ignored = ["golang.org/x/text", "golang.org/x/sys", "golang.org/x/net", "go", "github.com/therecipe/qt/core", "github.com/therecipe/qt/quick", "github.com/therecipe/qt/widgets",  "github.com/therecipe/qt/"]
 
 [[constraint]]
   name = "github.com/godbus/dbus"
@@ -8,10 +8,6 @@ ignored = ["golang.org/x/text", "golang.org/x/sys", "golang.org/x/net", "go"]
 [[constraint]]
   name = "github.com/PuerkitoBio/goquery"
   version = "1.4.1"
-
-[[constraint]]
-  branch = "master"
-  name = "github.com/therecipe/qt"
 
 [[constraint]]
   name = "github.com/tidwall/gjson"

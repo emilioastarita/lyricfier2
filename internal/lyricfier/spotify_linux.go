@@ -1,3 +1,4 @@
+// +build linux
 package lyricfier
 
 import (
@@ -6,13 +7,13 @@ import (
 	"os"
 )
 
-type SpotifyDbus struct {
+type Spotify struct {
 	conn *dbus.Conn
 	bus  dbus.BusObject
 	ch   chan *dbus.Signal
 }
 
-func (h *SpotifyDbus) Init() {
+func (h *Spotify) Init() {
 	conn, err := dbus.SessionBus()
 	if err != nil {
 		panic(err)
@@ -24,7 +25,7 @@ func (h *SpotifyDbus) Init() {
 	h.conn.Signal(h.ch)
 }
 
-func (h *SpotifyDbus) GetMetadata(newSong chan *Song) {
+func (h *Spotify) GetMetadata(newSong chan *Song) {
 	metadata := &Song{}
 	res, err := h.bus.GetProperty("org.mpris.MediaPlayer2.Player.Metadata")
 	if err != nil {
@@ -45,7 +46,7 @@ func (h *SpotifyDbus) GetMetadata(newSong chan *Song) {
 	}
 }
 
-func (h *SpotifyDbus) Ticker(changes chan string) {
+func (h *Spotify) Ticker(changes chan string) {
 	for {
 		select {
 		case <-h.ch:

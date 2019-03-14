@@ -73,6 +73,7 @@ func (h *Main) ReceiveSong(newSong *Song) {
 		h.Searching = true
 		gui.SetArtist(newSong.Artist)
 		gui.SetTitle(newSong.Title)
+		gui.SetLyric("Searching...")
 		go h.Search(h.LyricSearchChannel, newSong.Artist, newSong.Title)
 	}
 }
