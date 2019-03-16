@@ -2,3 +2,4 @@ vendor/
 cmd/rcc*
 cmd/deploy/*
 internal/gui/moc*
+internal/gui/rcc*
