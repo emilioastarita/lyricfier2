@@ -1,19 +1,25 @@
 # Lyricfier 2
 
-![Lyricfier2 Screenshot](screenshots/lyricfier2.jpg?raw=true "Lyricfier Screenshot")
+
+
+![Lyricfier2 Screenshot](screenshots/lyricfier2_osx.jpg?raw=true "Lyricfier Screenshot")
 
 Lyrics For Spotify App
 
-Lyricfier2 is a rewrite of the old lyricfier using Golang and nuklear bindings for Go. Is planned to be cross platform but was tested only on Linux.
+Lyricfier2 is a rewrite of the old lyricfier using Golang and qt bindings for Go.
 
 *Warning: We are in a very early stage!* 
 
-## Building and running in Ubuntu 16.04
 
+## qt building dependencies
+
+Lyricfier 2 is using qt so you need to install some deps for building. Follow the instructions for your platform in [qt golang binding](https://github.com/therecipe/qt#installation).
+
+## Building and running in Ubuntu 16.04
 
 ```bash
 # deps
-$ sudo apt install golang-go go-dep go-bindata xorg-dev libgl1-mesa-dev
+$ sudo apt install golang-go go-dep go-bindata
 # Create dir for clone
 $ mkdir -p $GOPATH/src/github.com/emilioastarita/lyricfier2
 # clone repo
@@ -23,8 +29,11 @@ $ cd lyricfier2
 $ dep ensure 
 $ cd cmd/
 # build
-$ go build
-# test build
-$ ./cmd
+$ qtdeploy test desktop
 ```
 
+### Tested platforms
+
+- windows
+- darwin
+- linux
