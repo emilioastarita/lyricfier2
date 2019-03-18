@@ -26,12 +26,6 @@
   revision = "847fc94819f9d5a4e7154e2203b36f6dbace6f48"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/therecipe/qt"
-  packages = ["."]
-  revision = "e73768bc9bcc6b8cdf6d648be24d3b564ea63cc4"
-
-[[projects]]
   name = "github.com/tidwall/gjson"
   packages = ["."]
   revision = "eee0b6226f0d1db2675a176fdfaa8419bcad4ca8"

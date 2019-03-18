@@ -61,11 +61,11 @@ func (h *Main) Lookup() {
 func (h *Main) ReceiveSong(newSong *Song) {
 	if newSong == nil {
 		h.SpotifyRunning = false
-		gui.SetIsSpotifyRunning(false)
+		gui.SetRunning(false)
 		return
 	}
 	h.SpotifyRunning = true
-	gui.SetIsSpotifyRunning(true)
+	gui.SetRunning(true)
 	if h.Current == nil || h.Current.Title != newSong.Title {
 		h.Current = newSong
 		h.Current.Lyric = ""

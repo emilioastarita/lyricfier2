@@ -4,7 +4,7 @@ import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.12
 
 Item {
-    width: 254
+    width: 274
     height: 507
     Rectangle {
         color : "#0F1624"
@@ -20,6 +20,15 @@ Item {
             ColumnLayout {
                 spacing: 5
                 width: Math.max(implicitWidth, scrollView.width)
+                Text {
+                        Layout.margins: 5
+                        id: runningStatus
+                        font { pixelSize: 18 }
+                        text: "Is spotify running?"
+                        visible: song.running == false
+                        color: "#f45b69"
+                }
+
                 Text {
                         Layout.margins: 5
                         id: title
