@@ -26,6 +26,12 @@
   revision = "847fc94819f9d5a4e7154e2203b36f6dbace6f48"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/therecipe/qt"
+  packages = ["."]
+  revision = "e73768bc9bcc6b8cdf6d648be24d3b564ea63cc4"
+
+[[projects]]
   name = "github.com/tidwall/gjson"
   packages = ["."]
   revision = "eee0b6226f0d1db2675a176fdfaa8419bcad4ca8"
@@ -58,6 +64,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "176d5fcea3a70120244669b286d9932684a4f65b647a18ef21234795c9f7fccd"
+  inputs-digest = "2bf206ea07fc3b7fe1ae90ed898c5de74e28fa12340315c3703f6ebea39c0041"
   solver-name = "gps-cdcl"
   solver-version = 1
