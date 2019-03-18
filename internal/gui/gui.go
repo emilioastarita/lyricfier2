@@ -19,11 +19,16 @@ func SetTitle(text string) {
 	guiSong.SetTitle(text)
 }
 
+func SetIsSpotifyRunning(running bool) {
+	guiSong.SetIsSpotifyRunning(running)
+}
+
 type CtxObject struct {
 	core.QObject
 	_ string `property:"title"`
 	_ string `property:"artist"`
 	_ string `property:"lyric"`
+	_ bool   `property:"isSpotifyRunning"`
 }
 
 var guiSong = NewCtxObject(nil)
