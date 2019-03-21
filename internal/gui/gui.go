@@ -1,10 +1,9 @@
 package gui
 
 import (
-	"fmt"
 	"github.com/therecipe/qt/core"
-	"github.com/therecipe/qt/quick"
-	"github.com/therecipe/qt/widgets"
+	"github.com/therecipe/qt/gui"
+	. "github.com/therecipe/qt/qml"
 	"os"
 )
 
@@ -21,7 +20,6 @@ func SetTitle(text string) {
 }
 
 func SetRunning(running bool) {
-	fmt.Printf("Setting running to %v\n", running)
 	guiSong.SetRunning(running)
 }
 
@@ -35,9 +33,6 @@ type CtxObject struct {
 }
 
 func (ctx *CtxObject) init() {
-	ctx.ConnectRunningChanged(func(boolProp bool) {
-		fmt.Println(" go: changed bool ->", boolProp)
-	})
 	ctx.SetRunning(false)
 }
 
@@ -45,12 +40,19 @@ var guiSong = NewCtxObject(nil)
 
 func Main() {
 	core.QCoreApplication_SetAttribute(core.Qt__AA_EnableHighDpiScaling, true)
-	app := widgets.NewQApplication(len(os.Args), os.Args)
-	view := quick.NewQQuickView(nil)
-	view.SetTitle("Lyricfier 2")
-	view.SetResizeMode(quick.QQuickView__SizeRootObjectToView)
-	view.RootContext().SetContextProperty("song", guiSong)
-	view.SetSource(core.NewQUrl3("qrc:/qml/application.qml", 0))
-	view.Show()
-	app.Exec()
+
+	gui.NewQGuiApplication(len(os.Args), os.Args)
+	engine := NewQQmlApplicationEngine(nil)
+	context := engine.RootContext()
+	context.SetContextProperty("song", guiSong)
+
+	engine.Load(core.NewQUrl3("qrc:/qml/application.qml", 0))
+
+	//view := quick.NewQQuickView(nil)
+	//view.SetTitle("Lyricfier 2")
+	//view.SetResizeMode(quick.QQuickView__SizeRootObjectToView)
+	//view.SetSource(core.NewQUrl3("qrc:/qml/application.qml", 0))
+	//view.Show()
+	gui.QGuiApplication_Exec()
+
 }

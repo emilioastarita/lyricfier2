@@ -3,9 +3,27 @@ import QtQuick.Window 2.2
 import QtQuick.Controls 2.5
 import QtQuick.Layouts 1.12
 
-Item {
+
+ApplicationWindow {
+    id: root
     width: 274
     height: 507
+    visible: true
+
+    property real fontFactor: 1.0
+
+    function incFontFactor() {
+        root.fontFactor += 0.1
+    }
+    function decFontFactor() {
+        root.fontFactor = root.fontFactor - 0.1
+        if (root.fontFactor < 0.7) {
+            root.fontFactor = 0.7
+        }
+    }
+
+    menuBar: LyricfierMenuBar{}
+
     Rectangle {
         color : "#0F1624"
         implicitWidth: parent.width
@@ -23,7 +41,7 @@ Item {
                 Text {
                         Layout.margins: 5
                         id: runningStatus
-                        font { pixelSize: 18 }
+                        font { pixelSize: 18 * fontFactor }
                         text: "Is spotify running?"
                         visible: song.running == false
                         color: "#f45b69"
@@ -32,14 +50,14 @@ Item {
                 Text {
                         Layout.margins: 5
                         id: title
-                        font { pixelSize: 18 }
+                        font { pixelSize: 18 * fontFactor }
                         text: song.title
                         color: "#f45b69"
                 }
                 Text {
                         Layout.leftMargin: 5
                         id: artist
-                        font { pixelSize: 15 }
+                        font { pixelSize: 15 * fontFactor }
                         text: song.artist
                         color: "#028090"
                 }
@@ -51,7 +69,7 @@ Item {
                     readOnly: true
                     wrapMode: Text.WordWrap
                     selectByMouse: true
-                    font { pixelSize: 13 }
+                    font { pixelSize: 13 * fontFactor }
                 }
             }
         }
