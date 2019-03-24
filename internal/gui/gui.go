@@ -40,19 +40,11 @@ var guiSong = NewCtxObject(nil)
 
 func Main() {
 	core.QCoreApplication_SetAttribute(core.Qt__AA_EnableHighDpiScaling, true)
-
-	gui.NewQGuiApplication(len(os.Args), os.Args)
+	app := gui.NewQGuiApplication(len(os.Args), os.Args)
+	app.SetWindowIcon(gui.NewQIcon5(":/qml/icon.png"))
 	engine := NewQQmlApplicationEngine(nil)
 	context := engine.RootContext()
 	context.SetContextProperty("song", guiSong)
-
 	engine.Load(core.NewQUrl3("qrc:/qml/application.qml", 0))
-
-	//view := quick.NewQQuickView(nil)
-	//view.SetTitle("Lyricfier 2")
-	//view.SetResizeMode(quick.QQuickView__SizeRootObjectToView)
-	//view.SetSource(core.NewQUrl3("qrc:/qml/application.qml", 0))
-	//view.Show()
 	gui.QGuiApplication_Exec()
-
 }
