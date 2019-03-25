@@ -9,7 +9,7 @@ ApplicationWindow {
     width: 274
     height: 507
     visible: true
-
+    title: "Lyricfier 2"
     property real fontFactor: 1.0
 
     function incFontFactor() {

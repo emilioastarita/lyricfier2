@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Terminal=0
+Exec=/usr/bin/lyricfier
+Icon=lyricfier
+Type=Application
+Categories=Audio;Music;
+StartupNotify=true
+Name=Lyricfier
+GenericName=Lyricfier
