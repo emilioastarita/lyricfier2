@@ -27,13 +27,13 @@ func (h *Server) Init(appData *AppData) {
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
 	h.routes()
-	h.e.Logger.Fatal(h.e.Start(":1323"))
+	h.e.Logger.Fatal(h.e.Start(appData.Address))
 }
 
 func (h *Server) routes() {
-	h.e.Static("/public/static", "static")
-	h.e.GET("/status", func(c echo.Context) error {
-		return c.Render(http.StatusOK, "home.html", h.appData)
+	h.e.Static("static", "static")
+	h.e.GET("/", func(c echo.Context) error {
+		return c.Render(http.StatusOK, "index.html", h.appData)
 	})
 	h.e.GET("/status", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, h.appData)

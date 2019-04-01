@@ -28,8 +28,7 @@ $ cd lyricfier2
 # install deps
 $ dep ensure 
 $ cd cmd/
-# build
-$ qtdeploy test desktop
+$ go run main.go
 ```
 
 ### Tested platforms

@@ -44,6 +44,12 @@
   version = "v0.0.7"
 
 [[projects]]
+  branch = "master"
+  name = "github.com/pkg/browser"
+  packages = ["."]
+  revision = "0a3d74bf9ce488f035cf5bc36f753a711bc74334"
+
+[[projects]]
   name = "github.com/tidwall/gjson"
   packages = ["."]
   revision = "eee0b6226f0d1db2675a176fdfaa8419bcad4ca8"
@@ -100,6 +106,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "bbb6c794ba06737d55e93fdb8517cef9d4ef5a3201e6437726e62d5d72513db8"
+  inputs-digest = "4a6f0ae746e1a8bba6b665091e2fbc56b7e9f320ea62b7fc41f43eca3c73cbb1"
   solver-name = "gps-cdcl"
   solver-version = 1

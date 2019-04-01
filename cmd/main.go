@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
+	"github.com/pkg/browser"
 	"runtime"
 )
 
@@ -27,4 +28,11 @@ func main() {
 			}
 		}
 	}()
+
+	go func() {
+		address := lyricfierMain.AppData.Address
+		browser.OpenURL("http://" + address)
+	}()
+
+	lyricfierMain.StartServer()
 }

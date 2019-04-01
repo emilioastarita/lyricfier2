@@ -22,11 +22,11 @@ type SearchResult struct {
 }
 
 type AppData struct {
-	Song Song `json:"song"`
-	SpotifyRunning     bool
-	Searching          bool
+	Song           Song `json:"song"`
+	SpotifyRunning bool
+	Searching      bool
+	Address        string
 }
-
 
 type Main struct {
 	Detector           DetectCurrentSong
@@ -34,7 +34,7 @@ type Main struct {
 	LyricSearchChannel chan *SearchResult
 	AppData            *AppData
 	searchLock         bool
-	server *Server
+	server             *Server
 }
 
 func (h *Main) Init() {
@@ -42,10 +42,13 @@ func (h *Main) Init() {
 	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
 	h.AppData.SpotifyRunning = false
+	h.AppData.Address = "localhost:2387"
 	h.Detector.Init()
 	h.NewSongChannel = make(chan *Song)
 	h.LyricSearchChannel = make(chan *SearchResult)
 	h.server = &Server{}
+}
+func (h *Main) StartServer() {
 	h.server.Init(h.AppData)
 }
 
