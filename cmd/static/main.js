@@ -51,9 +51,16 @@ function update() {
             console.error('Fetch Error ', err);
         });
 }
+const debouncedUpdate = _.debounce(update, 1000);
 function setup() {
     app = document.getElementById('app');
     update();
-    setInterval(update, 2000);
+    const conn = new WebSocket("ws://" + document.location.host + "/ws");
+    conn.onclose = function (evt) {
+        console.log('Connection error', evt)
+    };
+    conn.onmessage = function (evt) {
+        debouncedUpdate();
+    };
 }
 document.addEventListener('DOMContentLoaded', setup, false);

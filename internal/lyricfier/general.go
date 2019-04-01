@@ -84,12 +84,14 @@ func (h *Main) ReceiveSong(newSong *Song) {
 		h.AppData.Searching = true
 		go h.Search(h.LyricSearchChannel, newSong.Artist, newSong.Title)
 	}
+	h.server.NotifyChanges()
 }
 func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 	h.AppData.Searching = false
 	h.AppData.Song.Lyric = newLyric.Lyric
 	h.AppData.Song.LyricFound = newLyric.Found
 	h.AppData.Song.Source = newLyric.Source
+	h.server.NotifyChanges()
 }
 
 func (h *Main) Search(done chan *SearchResult, artist string, title string) {
