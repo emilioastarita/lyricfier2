@@ -20,10 +20,28 @@
   version = "v5.0.1"
 
 [[projects]]
-  branch = "master"
-  name = "github.com/gopherjs/gopherjs"
-  packages = ["js"]
-  revision = "847fc94819f9d5a4e7154e2203b36f6dbace6f48"
+  name = "github.com/labstack/echo"
+  packages = ["."]
+  revision = "6d9e043284aea2d07f5fcaf0d3a424eb7d9f6109"
+  version = "v4.0.0"
+
+[[projects]]
+  name = "github.com/labstack/gommon"
+  packages = ["color","log"]
+  revision = "7fd9f68ece0bcb1a905fac8f1549f0083f71c51b"
+  version = "v0.2.8"
+
+[[projects]]
+  name = "github.com/mattn/go-colorable"
+  packages = ["."]
+  revision = "3a70a971f94a22f2fa562ffcc7a0eb45f5daf045"
+  version = "v0.1.1"
+
+[[projects]]
+  name = "github.com/mattn/go-isatty"
+  packages = ["."]
+  revision = "c2a7a6ca930a4cd0bc33a3f298eb71960732a3a7"
+  version = "v0.0.7"
 
 [[projects]]
   name = "github.com/tidwall/gjson"
@@ -44,10 +62,34 @@
   revision = "65a9db5fad5105a89e17f38adcc9878685be6d78"
 
 [[projects]]
+  name = "github.com/valyala/bytebufferpool"
+  packages = ["."]
+  revision = "e746df99fe4a3986f4d4f79e13c1e0117ce9c2f7"
+  version = "v1.0.0"
+
+[[projects]]
+  name = "github.com/valyala/fasttemplate"
+  packages = ["."]
+  revision = "8b5e4e491ab636663841c42ea3c5a9adebabaf36"
+  version = "v1.0.1"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["acme","acme/autocert"]
+  revision = "a5d413f7728c81fb97d96a2b722368945f651e78"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["html","html/atom"]
   revision = "9f648a60d9775ef5c977e7669d1673a7a67bef33"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/sys"
+  packages = ["unix"]
+  revision = "9eb1bfa1ce65ae8a6ff3114b0aaf9a41a6cf3560"
 
 [[projects]]
   name = "golang.org/x/text"
@@ -58,6 +100,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "2bf206ea07fc3b7fe1ae90ed898c5de74e28fa12340315c3703f6ebea39c0041"
+  inputs-digest = "bbb6c794ba06737d55e93fdb8517cef9d4ef5a3201e6437726e62d5d72513db8"
   solver-name = "gps-cdcl"
   solver-version = 1

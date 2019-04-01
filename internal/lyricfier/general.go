@@ -1,19 +1,18 @@
 package lyricfier
 
 import (
-	"github.com/emilioastarita/lyricfier2/internal/gui"
 	"github.com/emilioastarita/lyricfier2/internal/search"
 	"regexp"
 	"strings"
 )
 
 type Song struct {
-	Title      string
-	Artist     string
-	ArtUrl     string
-	Lyric      string
-	LyricFound bool
-	Source     string
+	Title      string `json:"title"`
+	Artist     string `json:"artist"`
+	ArtUrl     string `json:"artUrl"`
+	Lyric      string `json:"lyric"`
+	LyricFound bool   `json:"found"`
+	Source     string `json:"source"`
 }
 
 type SearchResult struct {
@@ -22,23 +21,32 @@ type SearchResult struct {
 	Source string
 }
 
+type AppData struct {
+	Song Song `json:"song"`
+	SpotifyRunning     bool
+	Searching          bool
+}
+
+
 type Main struct {
 	Detector           DetectCurrentSong
 	NewSongChannel     chan *Song
 	LyricSearchChannel chan *SearchResult
-	Current            *Song
-	SpotifyRunning     bool
-	Searching          bool
+	AppData            *AppData
 	searchLock         bool
+	server *Server
 }
 
 func (h *Main) Init() {
+	h.AppData = &AppData{}
 	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
-	h.SpotifyRunning = false
+	h.AppData.SpotifyRunning = false
 	h.Detector.Init()
 	h.NewSongChannel = make(chan *Song)
 	h.LyricSearchChannel = make(chan *SearchResult)
+	h.server = &Server{}
+	h.server.Init(h.AppData)
 }
 
 func (h *Main) lock() {
@@ -60,33 +68,25 @@ func (h *Main) Lookup() {
 
 func (h *Main) ReceiveSong(newSong *Song) {
 	if newSong == nil {
-		h.SpotifyRunning = false
-		gui.SetRunning(false)
+		h.AppData.SpotifyRunning = false
 		return
 	}
-	h.SpotifyRunning = true
-	gui.SetRunning(true)
-	if h.Current == nil || h.Current.Title != newSong.Title {
-		h.Current = newSong
-		h.Current.Lyric = ""
-		if h.Searching {
+	h.AppData.SpotifyRunning = true
+	if h.AppData.Song.Title != newSong.Title {
+		h.AppData.Song = *newSong
+		h.AppData.Song.Lyric = ""
+		if h.AppData.Searching {
 			return
 		}
-		h.Searching = true
-		gui.SetArtist(newSong.Artist)
-		gui.SetTitle(newSong.Title)
-		gui.SetLyric("Searching...")
+		h.AppData.Searching = true
 		go h.Search(h.LyricSearchChannel, newSong.Artist, newSong.Title)
 	}
 }
 func (h *Main) ReceiveLyric(newLyric *SearchResult) {
-	h.Searching = false
-	if h.Current != nil {
-		h.Current.Lyric = newLyric.Lyric
-		h.Current.LyricFound = newLyric.Found
-		h.Current.Source = newLyric.Source
-		gui.SetLyric(newLyric.Lyric)
-	}
+	h.AppData.Searching = false
+	h.AppData.Song.Lyric = newLyric.Lyric
+	h.AppData.Song.LyricFound = newLyric.Found
+	h.AppData.Song.Source = newLyric.Source
 }
 
 func (h *Main) Search(done chan *SearchResult, artist string, title string) {
