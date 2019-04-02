@@ -3,12 +3,7 @@ package main
 import (
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
 	"github.com/pkg/browser"
-	"runtime"
 )
-
-func init() {
-	runtime.LockOSThread()
-}
 
 var lyricfierMain *lyricfier.Main
 
