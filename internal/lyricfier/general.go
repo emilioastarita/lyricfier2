@@ -42,13 +42,14 @@ func (h *Main) Init() {
 	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
 	h.AppData.SpotifyRunning = false
-	h.AppData.Address = "localhost:2387"
+
 	h.Detector.Init()
 	h.NewSongChannel = make(chan *Song)
 	h.LyricSearchChannel = make(chan *SearchResult)
 	h.server = &Server{}
 }
-func (h *Main) StartServer() {
+func (h *Main) StartServer(bindAddress string) {
+	h.AppData.Address = bindAddress
 	h.server.Init(h.AppData)
 }
 

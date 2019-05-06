@@ -30,7 +30,11 @@ func (h *Server) Init(appData *AppData) {
 		templates: template.Must(template.ParseGlob("views/*.html")),
 	}
 	h.routes(h.hub)
-	h.e.Logger.Fatal(h.e.Start(appData.Address))
+	s := &http.Server{
+		Addr: appData.Address,
+	}
+	h.e.HideBanner = true
+	h.e.Logger.Fatal(h.e.StartServer(s))
 }
 
 func (h *Server) routes(hub *Hub) {
