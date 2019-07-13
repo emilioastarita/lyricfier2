@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
 	"github.com/pkg/browser"
 )
@@ -8,6 +9,12 @@ import (
 var lyricfierMain *lyricfier.Main
 
 func main() {
+
+	address := flag.String("address", "localhost", "Bind address")
+	port := flag.String("port", "2387", "Bind port")
+
+	flag.Parse()
+
 	lyricfierMain = &lyricfier.Main{}
 	lyricfierMain.Init()
 	lyricfierMain.Lookup()
@@ -25,9 +32,8 @@ func main() {
 	}()
 
 	go func() {
-		address := lyricfierMain.AppData.Address
-		browser.OpenURL("http://" + address)
+		browser.OpenURL("http://" + *address + ":" + *port)
 	}()
 
-	lyricfierMain.StartServer()
+	lyricfierMain.StartServer(*address + ":" + *port)
 }

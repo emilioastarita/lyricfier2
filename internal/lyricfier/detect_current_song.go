@@ -10,7 +10,6 @@ type DetectCurrentSong struct {
 
 func (h *DetectCurrentSong) Init() {
 	h.platform = runtime.GOOS
-	println(h.platform)
 	h.Changes = make(chan string)
 	h.Conn = Spotify{}
 	h.Conn.Init()
