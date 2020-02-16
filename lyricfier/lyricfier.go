@@ -8,6 +8,7 @@ import (
 
 var lyricfierMain *lyricfier.Main
 
+//go:generate esc -o ../internal/lyricfier/static.go -pkg lyricfier static/
 func main() {
 
 	address := flag.String("address", "localhost", "Bind address")

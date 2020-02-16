@@ -26,9 +26,6 @@ func (h *Server) Init(appData *AppData) {
 	go h.hub.run()
 	h.e = echo.New()
 	h.appData = appData
-	h.e.Renderer = &TemplateRegistry{
-		templates: template.Must(template.ParseGlob("views/*.html")),
-	}
 	h.routes(h.hub)
 	s := &http.Server{
 		Addr: appData.Address,
@@ -38,9 +35,11 @@ func (h *Server) Init(appData *AppData) {
 }
 
 func (h *Server) routes(hub *Hub) {
-	h.e.Static("static", "static")
+	//h.e.Static("static", "static")
+	fs := http.FileServer(FS(false))
+	h.e.GET("/*", echo.WrapHandler(fs))
 	h.e.GET("/", func(c echo.Context) error {
-		return c.Render(http.StatusOK, "index.html", h.appData)
+		return c.HTML(http.StatusOK, FSMustString(false, "/static/index.html"))
 	})
 	h.e.GET("/status", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, h.appData)
