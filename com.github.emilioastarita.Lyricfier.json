@@ -1,0 +1,71 @@
+{
+  "app-id": "com.github.emilioastarita.Lyricfier",
+  "runtime": "org.freedesktop.Platform",
+  "runtime-version": "19.08",
+  "sdk": "org.freedesktop.Sdk",
+  "sdk-extensions": [
+    "org.freedesktop.Sdk.Extension.golang"
+  ],
+  "command": "lyricfier",
+  "finish-args": [
+    "--share=network",
+    "--talk-name=org.mpris.MediaPlayer2"
+  ],
+  "cleanup": [
+    "/go",
+    "/bin/scripts"
+  ],
+  "build-options": {
+    "build-args": [
+      "--share=network"
+    ]
+  },
+
+  "modules": [
+    {
+      "name": "scripts",
+      "sources": [
+        {
+          "type": "script",
+          "commands": [
+            ". /usr/lib/sdk/golang/enable.sh; export GOPATH=/app/go"
+          ],
+          "dest-filename": "my_enable.sh"
+        },
+        {
+          "type": "script",
+          "commands": [
+            ". /app/bin/scripts/my_enable.sh; cd /app/go/src/$1; go build -o x"
+          ],
+          "dest-filename": "build.sh"
+        }
+      ],
+      "buildsystem": "simple",
+      "build-commands": [
+        "mkdir -p /app/go/{src,pkg,bin}",
+        "install -d /app/bin/scripts",
+        "cp *.sh /app/bin/scripts/"
+      ]
+    },
+    {
+      "name": "lyricfier",
+      "buildsystem": "simple",
+      "build-commands": [
+        "cp -rpv go/* /app/go/",
+        "/app/bin/scripts/build.sh github.com/emilioastarita/lyricfier2/lyricfier/",
+        "install -D /app/go/src/github.com/emilioastarita/lyricfier2/lyricfier/x /app/bin/lyricfier",
+        "mkdir -p /app/share/icons/hicolor/64x64/apps",
+        "mkdir -p /app/share/icons/hicolor/128x128/apps",
+        "mkdir -p /app/share/applications",
+        "mkdir -p /app/share/metainfo"
+      ],
+      "sources": [
+        {
+          "type": "git",
+          "url": "https://github.com/emilioastarita/lyricfier2",
+          "dest": "go/src/github.com/emilioastarita/lyricfier2"
+        }
+      ]
+    }
+  ]
+}

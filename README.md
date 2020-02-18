@@ -9,6 +9,12 @@ Lyricfier2 is a rewrite of the old lyricfier using Golang and running as a web s
 ![Lyricfier 2 in Ubuntu](screenshots/screenshot-lyricfier.jpg?raw=true "Lyricfier 2")
 
 
+## Installation Linux
+
+Install from snap stor
+
+[![Get it from the Snap Store](https://snapcraft.io/static/images/badges/en/snap-store-black.svg)](https://snapcraft.io/lyricfier)
+
 ## How to build
 
 ```bash
