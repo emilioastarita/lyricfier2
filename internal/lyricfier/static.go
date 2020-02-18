@@ -209,25 +209,11 @@ func FSMustString(useLocal bool, name string) string {
 
 var _escData = map[string]*_escFile{
 
-	"/static/fonts/.DS_Store": {
-		name:    ".DS_Store",
-		local:   "static/fonts/.DS_Store",
-		size:    6148,
-		modtime: 1581738276,
-		compressed: `
-H4sIAAAAAAAC/+yYQUrDQBSG/zdmERBkli5zARe9QajxBL2AJREtNKZou587uvMEHkPG+aVTEsXsVP4P
-yjfQN8kjgXnvBYAtD90C8ABKJFtcTFDyN8LRRdz8cY0nbLDGFlfY4G8Qc79AjzX2uDvJv8WARzxv7xer
-duh32Z5v4/uhabrDvgVe3l6vfxLfzYrfPYzyEUIIIeZgrO/nehRCiInzoaJrOiQb/3d0ke3xdEXXdEg2
-xjm6oEva0xVd0yGZh5Zx+DDe+XN4MU9XdK33KMQUZ0k+1v+br+d/IcR/rvNFs2qWx4FghGMjcJs1BuG4
-PmkCXPpYeJk1BGoEhPhlvAcAAP//R5NV/wQYAAA=
-`,
-	},
-
 	"/static/fonts/material-icons/material.woff2": {
 		name:    "material.woff2",
 		local:   "static/fonts/material-icons/material.woff2",
 		size:    45648,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wASQO2/d09GMgABAAAAALJQAA8AAAACBRgAALHzAAEDlgAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiQbNhyB2F4GYACMAggEEQgKhf4shL8+C49SAAE2AiQDj1YEIAWCegcgW82ccWAitxzozapiwi/2
@@ -998,7 +984,7 @@ U1HZ3+HmfPfLAwAAAAEAAP//r/72blCyAAA=
 		name:    "5pCv5Yz4eMu9gmvX8nNhfRJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/5pCv5Yz4eMu9gmvX8nNhfRJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    33164,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAYQOe/d09GMgABAAAAAIGMABEAAAABl2QAAIEnAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGosYG5twHIHlTgZgAHoIgX4JjzQREAqD5zSDoiIBNgIkA5NKC4loAAQgBYIuByAMhBpbv25xBdWx
@@ -1561,7 +1547,7 @@ fGjbjZjE02Z8Uujp1QsXsuMrOuP37IQ4qaYm3yK9sLYuH72wKB+GCpOywsLa2gpqFOvktlBhGWNgolUa
 		name:    "9Z3uUWMRR7crzm1TjRicDgalQocB-__pDVGhF3uS2Ks.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDgalQocB-__pDVGhF3uS2Ks.woff2",
 		size:    12924,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wB8MoPNd09GMgABAAAAADJ8ABEAAAAAWXgAADIaAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjQbh3AcDAZgAIE8CIIaCY9gERAKgYFk8CABNgIkA4UUC4JMAAQgBYMOByAMhhQbRU4leNNhBc4D
@@ -1786,7 +1772,7 @@ rep3RlvVrzQNzqHFgbBc4RW+L2R5G5LwgzTrh+nqlkViaosnAAAAAQAA///TNxQkfDIAAA==
 		name:    "9Z3uUWMRR7crzm1TjRicDiFaMxiho_5XQnyRZzQsrZs.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDiFaMxiho_5XQnyRZzQsrZs.woff2",
 		size:    7588,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wCkHVvid09GMgABAAAAAB2kABEAAAAAR6QAAB1EAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbDBwMBmAAgSQIghoJj2AREArhSNhyATYCJAOIAAuEAgAEIAWDDgcgDIYUGyVAFezYi4DzgJCI
@@ -1922,7 +1908,7 @@ AqqhiyYkukbAWaoRxEIOEISYqqorXpEvX4UHKQSS1WBZQWgzXEHVYgAAAAEAAP//cpUEAKQdAAA=
 		name:    "9Z3uUWMRR7crzm1TjRicDi_vZmeiCMnoWNN9rHBYaTc.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDi_vZmeiCMnoWNN9rHBYaTc.woff2",
 		size:    10992,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wDwKg/Vd09GMgABAAAAACrwABEAAAAATUwAACqTAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbihwcDAZgAHoIghoJj2AREArocNlfATYCJAOEMAuCGgAEIAWDDgcgDIYUG3hDRQdiZB4AEmG/
@@ -2115,7 +2101,7 @@ w4lnge38pHruc8921WjDckJtRCyjXaR8Ub0FAQAA//8cMPxk8CoAAA==
 		name:    "9Z3uUWMRR7crzm1TjRicDmhQUTDJGru-0vvUpABgH8I.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDmhQUTDJGru-0vvUpABgH8I.woff2",
 		size:    6492,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wBcGaPmd09GMgABAAAAABlcABEAAAAAMRQAABj8AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbgmgcDAZgADwIghoJj2AREAq5LLQIATYCJAODVguBdAAEIAWDDgcgDIYUG1UsBezYC7BxsDHw
@@ -2233,7 +2219,7 @@ wC5WP2MZqxfqs0GJaTIH2oLRwRDEo34dAAAAAQAA//9Dn/w7XBkAAA==
 		name:    "9Z3uUWMRR7crzm1TjRicDolIZu-HDpmDIZMigmsroc4.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDolIZu-HDpmDIZMigmsroc4.woff2",
 		size:    15820,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wDMPTPCd09GMgABAAAAAD3MABEAAAAAcdwAAD1qAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbkwocDAZgAIE8CIIaCY9gERAKgaRYgY0NATYCJAOGYAuDMgAEIAWDDgcgDIYUGzZjNeyYRQK6
@@ -2507,7 +2493,7 @@ eXw2usw9AAA=
 		name:    "9Z3uUWMRR7crzm1TjRicDp6iIh_FvlUHQwED9Yt5Kbw.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDp6iIh_FvlUHQwED9Yt5Kbw.woff2",
 		size:    20820,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAVQOq/d09GMgABAAAAAFFUABEAAAAAnxgAAFDyAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjgbpGIcDAZgAHgIghoJj2AREAqB7HyBy1wBNgIkA4dMC4NoAAQgBYMOByAMhhQba4s1eM7EH7cD
@@ -2864,7 +2850,7 @@ F6yHwQhnUsazBeyWKaK2bgAAAAABAAD//1LZETFUUQAA
 		name:    "9Z3uUWMRR7crzm1TjRicDpRg-9ZTZj4Oi-6CEThT2Do.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDpRg-9ZTZj4Oi-6CEThT2Do.woff2",
 		size:    3408,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wBQDa/yd09GMgABAAAAAA1QABEAAAAAFYAAAAzzAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGhYbDBwMBmAATAiCGgmPYBEQCol4iRMBNgIkAywLGAAEIAWDDgcgDIYUG94TUZSQVgrZx2EcI/7/
@@ -2931,7 +2917,7 @@ AAAAAQAA//+U/HHOUA0AAA==
 		name:    "9Z3uUWMRR7crzm1TjRicDujkDdvhIIFj_YMdgqpnSB0.woff2",
 		local:   "static/fonts/notosans/9Z3uUWMRR7crzm1TjRicDujkDdvhIIFj_YMdgqpnSB0.woff2",
 		size:    30172,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAVQOq/d09GMgABAAAAAHXcABEAAAAA9eQAAHV8AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbjmYcDAZgAIJsCIIaCY9gERAKg5psgupdATYCJAOUUAuKKgAEIAWDDgcgDIYUG4LXB/CmN7Ry
@@ -3444,7 +3430,7 @@ QXJKmOrckZKAM2kBAQAA//9vlk4F3HUAAA==
 		name:    "ByLA_FLEa-16SpQuTcQn4CYE0-AqJ3nfInTTiDXDjU4.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4CYE0-AqJ3nfInTTiDXDjU4.woff2",
 		size:    28544,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAgQN+/d09GMgABAAAAAG+AABEAAAAA6PwAAG8eAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbhlgcDAZgAIJsCIIYCY9gERAKg4pkgtxDATYCJAOUVAuKLAAEIAWCaAcgDIRqG4zLB2Rei5y7
@@ -3930,7 +3916,7 @@ JgIAAAEAAP//+51VhIBvAAA=
 		name:    "ByLA_FLEa-16SpQuTcQn4DTOQ_MqJVwkKsUn0wKzc2I.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4DTOQ_MqJVwkKsUn0wKzc2I.woff2",
 		size:    20104,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAVQOq/d09GMgABAAAAAE6IABEAAAAAktAAAE4oAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjgblUYcDAZgAHgIghgJj2AREAqB5SSBxmwBNgIkA4dMC4NoAAQgBYJoByAMhGobjYA1jJun43aA
@@ -4275,7 +4261,7 @@ jTHKDCX8wCu+41DGeaAX/GmrqPbOSU4AAQAA//9SkNMAiE4AAA==
 		name:    "ByLA_FLEa-16SpQuTcQn4DUj_cnvWIuuBMVgbX098Mw.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4DUj_cnvWIuuBMVgbX098Mw.woff2",
 		size:    10364,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wB8KIPXd09GMgABAAAAACh8ABEAAAAAR7QAACgdAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbhQQcDAZgAHoIghgJj2AREArkRNZwATYCJAOEMAuCGgAEIAWCaAcgDIRqG58+RQdi2DgACHPf
@@ -4458,7 +4444,7 @@ AAD//y3WfHF8KAAA
 		name:    "ByLA_FLEa-16SpQuTcQn4EbcKLIaa1LC45dFaAfauRA.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4EbcKLIaa1LC45dFaAfauRA.woff2",
 		size:    7244,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wBMHLPjd09GMgABAAAAABxMABEAAAAARewAABvvAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbDBwMBmAAgSQIghgJj2AREArfYNZSATYCJAOIBAuEBAAEIAWCaAcgDIRqGzc+E+542DiwbWC9
@@ -4589,7 +4575,7 @@ AAD//7guHs5MHAAA
 		name:    "ByLA_FLEa-16SpQuTcQn4Go_sUJ8uO4YLWRInS22T3Y.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4Go_sUJ8uO4YLWRInS22T3Y.woff2",
 		size:    12512,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wDgMB/Pd09GMgABAAAAADDgABEAAAAAVaAAADCAAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjQbhXQcDAZgAIE8CIIYCY9gERAK/WDtBwE2AiQDhRALgkwABCAFgmgHIAyEahvaShXcGDe3AwJF
@@ -4807,7 +4793,7 @@ yMgGj3d+5OR4vDus1JBM79b1eDciAM3vsT1MbHjLr3TsBg3IfFtExCLnmzMAAAABAAD//2h1L5PgMAAA
 		name:    "ByLA_FLEa-16SpQuTcQn4I4P5ICox8Kq3LLUNMylGO4.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4I4P5ICox8Kq3LLUNMylGO4.woff2",
 		size:    14904,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wA4OsfFd09GMgABAAAAADo4ABEAAAAAaNgAADnVAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbikIcDAZgAIE8CIIYCY9gERAKgZxwgYYHATYCJAOGYAuDMgAEIAWCaAcgDIRqG5ZaJezYiwLO
@@ -5065,7 +5051,7 @@ ouC6qWL8IAzGF0qgJ19IGAyxxffkMUZC5wI4+eDS7BVsUtoBAAAAAQAA//+k4W1OODoAAA==
 		name:    "ByLA_FLEa-16SpQuTcQn4Jd-YqeGZiJEdX0sEGp0JvE.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4Jd-YqeGZiJEdX0sEGp0JvE.woff2",
 		size:    3208,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wCIDHfzd09GMgABAAAAAAyIABEAAAAAFIAAAAwrAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGhYbDBwMBmAATAiCGAmPYBEQColMiGkBNgIkAywLGAAEIAWCaAcgDIRqG+ISUZQUrlWyH4Nte6lp
@@ -5128,7 +5114,7 @@ dojY3LpgxEdobEtlN7dCDUE6S0hs5sQrCvZCITHiAjhTk1ICznasEgAAAAEAAP//tAEIYogMAAA=
 		name:    "ByLA_FLEa-16SpQuTcQn4L6up8jxqWt8HVA3mDhkV_0.woff2",
 		local:   "static/fonts/notosans/ByLA_FLEa-16SpQuTcQn4L6up8jxqWt8HVA3mDhkV_0.woff2",
 		size:    6048,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wCgF1/od09GMgABAAAAABegABEAAAAALpQAABdBAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbgX4cDAZgADwIghgJj2AREAq2aLFIATYCJAODVguBdAAEIAWCaAcgDIRqG9kpFexYH8DGAcFw
@@ -5239,7 +5225,7 @@ DAAAAQAA//9b0zj6oBcAAA==
 		name:    "C7bP6N8yXZ-PGLzbFLtQKRJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/C7bP6N8yXZ-PGLzbFLtQKRJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    21884,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAVQOq/d09GMgABAAAAAFV8ABEAAAAAqbQAAFUaAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjgbpAocDAZgAHgIgX4JjzQREAqChgiB5FYBNgIkA4dQC4NqAAQgBYIuByAMhBob75UH8KZnqXE7
@@ -5614,7 +5600,7 @@ UwAAAAEAAP//59sheHxVAAA=
 		name:    "LICENSE_OFL.txt",
 		local:   "static/fonts/notosans/LICENSE_OFL.txt",
 		size:    4301,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/6RXXY/bOs6+168gevGiA3jS0777AfTOTZwZ4zh2ju1pt5eKxcTaypJXkpPm3y8oO58z
 XeDs9qYeWyIfPiQfMnUrHSyN9lCZrT9wiyAdKNmgdihg0AIt+BahSjMoetTj4Ww8ELGvaJ00Gj7OPs4Y
@@ -5656,7 +5642,7 @@ AwAA///AFIOJzRAAAA==
 		name:    "LeFlHvsZjXu2c3ZRgBq9nFtXRa8TVwTICgirnJhmVJw.woff2",
 		local:   "static/fonts/notosans/LeFlHvsZjXu2c3ZRgBq9nFtXRa8TVwTICgirnJhmVJw.woff2",
 		size:    15616,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAAPf/Cd09GMgABAAAAAD0AABEAAAAAcmgAADyeAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlgbjkQcDAZgAII2CIF+CY80ERAKgaxAgZN3ATYCJAOGaAuDOAAEIAWCLgcgDIQaG0BjNWybRj+7
@@ -5926,7 +5912,7 @@ d9feX8Pf739cw9NXT/FRZ4TrjsY1LdAw0T7zoWkdLWQMiOtqbrptXBWPiTb8wQ+BjSYSvAtnN6OWMcW1
 		name:    "PIbvSEyHEdL91QLOQRnZ1-gdm0LZdjqr5-oayXSOefg.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ1-gdm0LZdjqr5-oayXSOefg.woff2",
 		size:    15676,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wA8PcPCd09GMgABAAAAAD08ABEAAAAAdAgAADzcAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlgbjkQcDAZgAII2CIISCY80ERAKga4UgZR6ATYCJAOGaAuDOAAEIAWCWAcgDIUrG5JkJeLtewQ4
@@ -6197,7 +6183,7 @@ kJNAvrpJ1LuvXL3axC1Bj+yFrAnm5CsfAB9W/cfXAAEAAP//5ISenjw9AAA=
 		name:    "PIbvSEyHEdL91QLOQRnZ10Tj6bCwSDA5u__Fbjwz3f0.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ10Tj6bCwSDA5u__Fbjwz3f0.woff2",
 		size:    31004,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/3yaQ5AwAKKj27Zt27Zt2/zbtm3btm3btm27e2tmrlvvyyXXpCq3uMmLMQEAAgAAAHjg
 ACACAAAABvMAALi3AwBC8QL8f8CKhMLOAcIJ+JAAMwDwhAhEgoxjQUSACqriCDwTB2QDIgFOkoOOsAIA
@@ -6723,7 +6709,7 @@ XM+00W6zcNbRNu9y2KdawVX7DbVde/yFuW1tqc2imJfiL8LQCbiI2rJzjsRWAAABAAD//wVYiKoceQAA
 		name:    "PIbvSEyHEdL91QLOQRnZ15X5f-9o1vgP2EXwfjgl7AY.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ15X5f-9o1vgP2EXwfjgl7AY.woff2",
 		size:    10872,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wB4KofVd09GMgABAAAAACp4ABEAAAAAT9wAACoZAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbikYcDAZgAHoIghIJjzQREArvQN9lATYCJAOEIAuCEgAEIAWCWAcgDIUrG8VFJWNbRsxuByEU
@@ -6914,7 +6900,7 @@ LijgZ7Acl4eLgp6IRfiMEmpgRnIFVyUOAgAAAQAA///NJuw4eCoAAA==
 		name:    "PIbvSEyHEdL91QLOQRnZ16-j2U0lmluP9RWlSytm3ho.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ16-j2U0lmluP9RWlSytm3ho.woff2",
 		size:    21808,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAVQOq/d09GMgABAAAAAFUwABEAAAAAr8QAAFTRAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjgbpBAcDAZgAHgIghIJjzQREAqCkFCB7EkBNgIkA4dMC4NoAAQgBYJYByAMhSsbs5oXcGfXAN9W
@@ -7288,7 +7274,7 @@ AA==
 		name:    "PIbvSEyHEdL91QLOQRnZ16aRobkAwv3vxw3jMhVENGA.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ16aRobkAwv3vxw3jMhVENGA.woff2",
 		size:    13300,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wD0MwvMd09GMgABAAAAADP0ABEAAAAAXdwAADOSAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjQbh3AcDAZgAIE8CIISCY80ERAKgYwU+XMBNgIkA4UYC4JOAAQgBYJYByAMhSsbSVIF3PXBeVAS
@@ -7520,7 +7506,7 @@ XeOHFvQzAAA=
 		name:    "PIbvSEyHEdL91QLOQRnZ1_8zf_FOSsgRmwsS7Aa9k2w.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ1_8zf_FOSsgRmwsS7Aa9k2w.woff2",
 		size:    6916,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAEG/vkd09GMgABAAAAABsEABEAAAAAN6QAABqmAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbgmgcDAZgADwIghIJjzQREArIEMBdATYCJAODVguBdAAEIAWCWAcgDIUrG9cxFWybRr3bAaFI
@@ -7645,7 +7631,7 @@ pgasJnvddE/waaPJFMFUNSOFEEm1pxsz4Dm+tdzUAAEAAP//buyDyAQbAAA=
 		name:    "PIbvSEyHEdL91QLOQRnZ1xWV49_lSm1NYrwo-zkhivY.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ1xWV49_lSm1NYrwo-zkhivY.woff2",
 		size:    8788,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wBUIqvdd09GMgABAAAAACJUABEAAAAAUpQAACH2AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbDBwMBmAAgSQIghIJjzQREAr5DPAuATYCJAOIAAuEAgAEIAWCWAcgDIUrGw5LJeOYlbgdFInx
@@ -7801,7 +7787,7 @@ jwwDJgOExjfUs7yoFoiP32XDJhbP0xsMEYyFergRzJB7VAMR2RAH+Y5aAAEAAP//PPOptlQiAAA=
 		name:    "PIbvSEyHEdL91QLOQRnZ1z0LW-43aMEzIO6XUTLjad8.woff2",
 		local:   "static/fonts/notosans/PIbvSEyHEdL91QLOQRnZ1z0LW-43aMEzIO6XUTLjad8.woff2",
 		size:    33052,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wASQO2/d09GMgABAAAAAIEcABEAAAABFcQAAIC6AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbjmYcDAZgAIJsCIISCY80ERAKg9wgg6hGATYCJAOUUAuKKgAEIAWCWAcgDIUrG5j1F9i2jPg5
@@ -8362,7 +8348,7 @@ jI8IIRX6DhyQSzX2p41xAAABAAD//1uVAaIcgQAA
 		name:    "erE3KsIWUumgD1j_Ca-V-xJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/erE3KsIWUumgD1j_Ca-V-xJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    32652,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAWQOm/d09GMgABAAAAAH+MABEAAAABESQAAH8rAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbjmYcDAZgAIJsCIF+CY80ERAKg9RUg6F0ATYCJAOUTAuKKAAEIAWCLgcgDIQaG3PxNWxcbbPb
@@ -8916,7 +8902,7 @@ EtraTomyFbRubW1v3wHXvSM8UrZuMQBLGbgoC6W1OQABAAD//w436vKMfwAA
 		name:    "gEkd0pn-sMtQ_P4HUpi6WBJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/gEkd0pn-sMtQ_P4HUpi6WBJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    8600,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wCYIWfed09GMgABAAAAACGYABEAAAAAUUwAACE5AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGlIbDBwMBmAAgSQIgX4JjzQREAr4EO9OATYCJAOIAAuEAgAEIAWCLgcgDIQaG99JFezYS4DzIBTg
@@ -9069,7 +9055,7 @@ J32s3k0SZ3UyDXPUxqyqJeBKd6wpzCwBECULF6/ik+0+AAABAAD//9OA5wCYIQAA
 		name:    "iLJc6PpCnnbQjYc1Jq4v0xJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/iLJc6PpCnnbQjYc1Jq4v0xJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    10564,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wBEKbvWd09GMgABAAAAAClEABEAAAAATVAAACjmAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbikYcDAZgAHoIgX4JjzQREArsAN0rATYCJAOEIAuCEgAEIAWCLgcgDIQaG7xDJWNbBj1sHGww
@@ -9255,7 +9241,7 @@ IXxtErKrczzA+IHz4v37KLPSgA0VDu5Kx4Da0aUxjbTSymAYZZx6PR4/VF+8FEerL8a3Ul1U1euLiyVs
 		name:    "iPF-u8L1qkTPHaKjvXERnxJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/iPF-u8L1qkTPHaKjvXERnxJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    13012,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wDUMivNd09GMgABAAAAADLUABEAAAAAWpAAADJ0AAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGjQbh3AcDAZgAIE8CIF+CY80ERAKgYcc9XgBNgIkA4UUC4JMAAQgBYIuByAMhBobe08lYxtG9G4H
@@ -9482,7 +9468,7 @@ cGGrK48CAAEAAP//1HWxrdQyAAA=
 		name:    "mTzVK0-EJOCaJiOPeaz-hxJtnKITppOI_IvcXXDNrsc.woff2",
 		local:   "static/fonts/notosans/mTzVK0-EJOCaJiOPeaz-hxJtnKITppOI_IvcXXDNrsc.woff2",
 		size:    6924,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAMG/Pkd09GMgABAAAAABsMABEAAAAAN7wAABqvAAEKPQAAAAAAAAAAAAAAAAAAAAAA
 AAAAGiIbgmgcDAZgADwIgX4JjzQREArJdMJOATYCJAODVguBdAAEIAWCLgcgDIQaG/kxJezYSwEbBwgg
@@ -9607,7 +9593,7 @@ jRWCkMm5iLScTAKRkrMwwhoQRCo9QmGw3KwLIzxDMKUMIWwSZJNcAQAA//8AoW1jDBsAAA==
 		name:    "android-chrome-192x192.png",
 		local:   "static/img/android-chrome-192x192.png",
 		size:    20326,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAMQPO/iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABGdBTUEAALGP
 C/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QArABM
@@ -9956,7 +9942,7 @@ JYbOEf8nAAD//y9jSidmTwAA
 		name:    "android-chrome-256x256.png",
 		local:   "static/img/android-chrome-256x256.png",
 		size:    44513,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAYQOe/iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABGdBTUEAALGP
 C/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAABmJLR0QArABM
@@ -10708,7 +10694,7 @@ AAAA//+E/UDl4a0AAA==
 		name:    "apple-touch-icon.png",
 		local:   "static/img/apple-touch-icon.png",
 		size:    11220,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/5TLQ3QkDIDt8Ypto2NbHdu2zYpZsW13bNvo2F9sO+nYtt+Z5VvMYs4997/7RSkrSiHB
 48MDAAAkGWlxVQAA0PI/hwUHAABN9UkWAAAA0lJEQQQAaExA+DSBAgAAJGbSqgoAgDcVABAYCgC8AwCA
@@ -10903,7 +10889,7 @@ ybWlsf+m/iP8D2YyULpAlglwjoPmei/6OxUAAABkJBTF60SNg/9fAAAA///vgF8Y1CsAAA==
 		name:    "arrow-down-light.svg",
 		local:   "static/img/arrow-down-light.svg",
 		size:    214,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/1yOTU7DMBCF9z3FaFh77AxjJ0VxFywQi3IIpAbbkkkqYtlVT48sWFVv9370vnmvAb5S
 zh6f3rgLIS4pxOKRBaGmpb1uN48GDLBA91q6lPgX377zunuMpVxftG6tUXum7SdoNsbovQY8HQAA5utn
@@ -10916,7 +10902,7 @@ iXDx+DGSDDDSJOeBYWASzkL2qITsdB4mOBLbrBw45ZS7o37cG0WjjSyV5d3c8Z993dald+f+eTr8BgAA
 		name:    "arrow-down.svg",
 		local:   "static/img/arrow-down.svg",
 		size:    214,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/1yOPU7EMBCF+z3FaKg9doaxk0XxFlQUyyGQNtiWTLIilr3K6ZEFFXrd+9H75r0G+Ew5
 e3wS7kKISwqxeGRBqGlpr9vDowEDLNC9lm4l/saPr7zuHmMp9xetW2vUnmn7DpqNMXqvAS8nAID5/lEi
@@ -10929,7 +10915,7 @@ e3wS7kKISwqxeGRBqGlpr9vDowEDLNC9lm4l/saPr7zuHmMp9xetW2vUnmn7DpqNMXqvAS8nAID5/lEi
 		name:    "dark-theme.png",
 		local:   "static/img/dark-theme.png",
 		size:    3828,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/7yS5z8V/uOw3+dwjGNn5thKUWREObLHiayUPbKljHDs0SGZGRXOx5ZCw1b2XuGYKRzH
 OFbn2AeRTuR+ff+I+/fgeni9ridXoqkxigXODwcAsOjf1jEDAGD+BwMdAKBHzQkHAIAEmKG0QOWowDoA
@@ -11000,7 +10986,7 @@ idj5dLkmkPL0ZZ+KSWV5RCYAAOjrGutUajnG/L8AAAD//984VoP0DgAA
 		name:    "dark-theme@2x.png",
 		local:   "static/img/dark-theme@2x.png",
 		size:    8549,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+y39zfcX/T/+5rJYEQbEdEZXRAkITpDtERNJEgwWhBE730QPUp0iV7eiBbd6BFCjAxB
 dEMmJrrB6PWurPu593/4ftfnh/PDWY+9ztp7n+c+++xYAz1Nmuus1wEAoHmkpfYUAEDAvwUlBwDAzKPc
@@ -11138,7 +11124,7 @@ AAD//8PNo89lIQAA
 		name:    "favicon-16x16.png",
 		local:   "static/img/favicon-16x16.png",
 		size:    1566,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/3TSa1TS9x8H8A+hf00S7G+bVm5jOsut6fC6Yq6l4oUURCTvmQioWAroTxRNQqbmFRHE
 29BQUzQtV+3q7ssFiApUO6c92KO2c3Z6snN6uLPT2fmCJjjHef04n/fv972d7/l0s5jp/n5H/ADAn55B
@@ -11166,7 +11152,7 @@ mbRbyWXKfwIAAP//t+g8tx4GAAA=
 		name:    "favicon-32x32.png",
 		local:   "static/img/favicon-32x32.png",
 		size:    1455,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/3SLbVzSBx7AfwiJoqaliDsrGZY1O+uPaF6OKy0cOtQUqRkzheETKxT1b5HzHLTsk6Xr
 yWyZgzW1LMiHMs10119z01NMFLf5AGo1H3Jt3sAlmuV9vHf34l58X32/34KoSLYD6S8kAHAIC2VxAYC6
@@ -11200,7 +11186,7 @@ oiIAWdlzk71NxoEtW7r2dWvDJriA97TbJrJz9nTmXHLBO1NZcr/HiXjPezxq9+BAZ7u2fV07sVse+s2H
 		name:    "favicon.ico",
 		local:   "static/img/favicon.ico",
 		size:    15086,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/8S7e3Bb53nnT0lk+IuSMJ4fu7t0utW4SZW4O6M2K4uOhqUSd1LF7S5t0bLEm0SLImGK
 IEOABEEQhwAPQFyJ28GduBAESPAGS3DTne1wZ5ed4T/bxTnv9WA7o8yswnq23NKjZkt5VuyUM8v12QH4
@@ -11349,7 +11335,7 @@ oqlW7joAAA==
 		name:    "icon.icns",
 		local:   "static/img/icon.icns",
 		size:    436975,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+y891dT2/YHGjAKqEhTQUBAQUFakCotAVEQaUrvQeldOoQSEIWjUlRAehPpPfSOqLTQ
 WyiGKjUk9ACpb3iP59zveO8feD/cPcYe+8NkZ+251prlM9faibOthw/gXMmOoZ4aHwAAeOFse1cCcEba
@@ -17535,7 +17521,7 @@ OdlZudlZ2Tm5ucRJsJSam5OdmZG5rXMyP/8L/8fPZ7mLgv075L3/bJ/vX8//b+z7b6//EQAA//8ZKM/L
 		name:    "icon.ico",
 		local:   "static/img/icon.ico",
 		size:    137381,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+y9C3Rb13kmSjucNIVmYrtJJ71tEru8uL1J7q2TrrmdSdpeME2yvKJEfsmyREqE9aJe
 FMUHQBIACRAPAiAJgAAB8AHwDfABSlbT5VRzp+3caYj2JsR5A3E9boml3ulKx506yti3le4kouszaz/O
@@ -18658,7 +18644,7 @@ x2TRAAAAAElFTkSuQmCCAQAA//9Y0ehupRgCAA==
 		name:    "icon.png",
 		local:   "static/img/icon.png",
 		size:    41379,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/wAZQOa/iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAYAAABccqhmAAAABmJLR0QArABM
 AMcwFOpfAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AkDBy8SId8jHQAAABl0RVh0Q29tbWVu
@@ -19358,7 +19344,7 @@ rkJgggEAAP//JgdoNaOhAAA=
 		name:    "light-theme.png",
 		local:   "static/img/light-theme.png",
 		size:    3649,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/9TJ6zvTD+PA8c/mNGchp0RUcogNCTnkfGomFeqbc7IYYg4VNhtyZlKR+koOISuUQ47L
 ebQQo2YijFiMSUvm9Lt+1/1P3PeD94P39Uq/iLAXFVIQAgBA1NHB5hIAALj/D8IPAECPuR8FAABQ5CV7
@@ -19424,7 +19410,7 @@ R3pvOwAAgKMtwqbGyjfx/wIAAP//tLAeLkEOAAA=
 		name:    "light-theme@2x.png",
 		local:   "static/img/light-theme@2x.png",
 		size:    8152,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+yX5zPc/xf2P7uWLKJHRBKsBEv0qKsuIYgeUcIqX6JEjdWtskhTgiBatBAEYdXoJUTU
 iLAiet3o3SqL3Xty/w33k3vm9+D94H3NOa+55sxcM+dEGxloMdBdpwMAgEFHW+MhAICAfw9KAwAACv3J
@@ -19553,7 +19539,7 @@ AAAA6GgaaFSo20X+nwAAAP//J3t69NgfAAA=
 		name:    "mstile-150x150.png",
 		local:   "static/img/mstile-150x150.png",
 		size:    10366,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/8S6RVDczwPt+8WCBA0DJDjBJgQbdIIFl+BhCAQNwd09uA/u7u4uwQkySNDBPbgEdwuv
 fq/u5i7u+l9dfVZ9etH1qT7dVSdMRUkGD4ccBwAAPDlZyc8AgIL/38R6AQCAW+1dIQAA6KZiimIAUBv9
@@ -19729,7 +19715,7 @@ y9NrhEZfD6MdmZ8e7PvdR9mHOeIrm/OJHTggI3I6F+dNBAAAkJNSkqwS/+b//wUAAP//noau0X4oAAA=
 		name:    "safari-pinned-tab.svg",
 		local:   "static/img/safari-pinned-tab.svg",
 		size:    2577,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/2xVXW/byhF95684ZV96gbvWzsx+FpYveu0gKNC0QeKmyKMqMbJQWTIkwnb764uzlPMh
 Rw+cJZecPXPmnNHlb8/3WzwOh+Nmv5v3cuF7HMfFbrXY7nfDvN/t+9+uuss/3Pzj+vbz+zc4Pq7x/p+/
@@ -19760,7 +19746,7 @@ BwAA//8aAAiJEQoAAA==
 		name:    "tray-icon-macTemplate.png",
 		local:   "static/img/tray-icon-macTemplate.png",
 		size:    826,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+oM8HPn5ZLiYmBg4PX0cAliYGAQAGEONgYGBvnP/xMZGBilM0MiSiJ8fayS83P1ElPy
 k1L1KnILGEDAxr6iIDE5O7VEISk1PTPPVun97v1KCpkptkrhpr4GvgXOqRmZHlVFqcFVfiHJVdnJlilK
@@ -19783,7 +19769,7 @@ UtfwD/kSuCShgJHhuS839yrO81mgJO/p6ueyzimhCRAAAP//gRlQ3joDAAA=
 		name:    "tray-icon-macTemplate@2x.png",
 		local:   "static/img/tray-icon-macTemplate@2x.png",
 		size:    898,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+oM8HPn5ZLiYmBg4PX0cAliYGBQAGEONgYGhuKqqi8MDIzSmSERJRG+PlbJ+bl6iSn5
 Sal6FbkFDCBgY19RkJicnVqikJSanplnq/R+934lhcwUW6VwU18D3wLn1IxMj6qi1OAqv5DkquxkyxQl
@@ -19808,7 +19794,7 @@ AA==
 		name:    "tray-icon-win.ico",
 		local:   "static/img/tray-icon-win.ico",
 		size:    137381,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+y9C3Rb13kmSjucNIVmYrtJJ71tEru8uL1J7q2TrrmdSdpeME2yvKJEfsmyREqE9aJe
 FMUHQBIACRAPAiAJgAAB8AHwDfABSlbT5VRzp+3caYj2JsR5A3E9boml3ulKx506yti3le4kouszaz/O
@@ -20931,7 +20917,7 @@ x2TRAAAAAElFTkSuQmCCAQAA//9Y0ehupRgCAA==
 		name:    "waves.svg",
 		local:   "static/img/waves.svg",
 		size:    2299,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/7yWQW+rOBDH7/0UlntpJTN4bI+Nu1Cpvewpx+2BG01Iyi6BKtAk1Wq/+wpIdpu+Ql/e
 06siRoP898yPPwMkbrYrtl+XVZPwp7Z9vgnD3W4HOw31ZhUqKWXYbFd8kNzsy6L66yMheu/DfpWzbZHv
@@ -20952,7 +20938,7 @@ Amn0dfeZjbu/NLcX/wYAAP//gBt74PsIAAA=
 		name:    "index.html",
 		local:   "static/index.html",
 		size:    1016,
-		modtime: 1581863836,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/5yTv5LTMBDG+zyF0LXIzp/JTQrLzQEVM1CEgnIjreO9k2WPtOckPD0jOwlHHBgGN1pp
 v+8na3e2ePfhy9P2+9ePoubGlbMiLcKB32uJXqYDBFvOhBCiaJBBmBpCRNby2/aT2shziokdlp9PgUxF
@@ -20969,7 +20955,7 @@ XXaC7DAQCXhNnsPrcgbnw6D/DAAA//9V277G+AMAAA==
 		name:    "main.js",
 		local:   "static/main.js",
 		size:    2400,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/5xVQZPiNhO98yv601eUTe3YJpnNZcAcdjOpJDWbPZCtPc4KuW2UEZJLkg1ki/+ekjw2
 NmZIVXwBtbrf6356tpiSxoLFXSmoRUjhOW4X4bfJcgo8h9AoWcSWW4Ez+A7T1QQAYJnxGuqI5ylx+wSY
@@ -20994,7 +20980,7 @@ xeSfAAAA//8zuDCcYAkAAA==
 		name:    "site.webmanifest",
 		local:   "static/site.webmanifest",
 		size:    466,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/5yQUWoDMQxE//cUxv1NusSQQHKG3qCUoNqKV3RtLbIL2YbcvdhxUyhsodWXxJsZBl06
 pZTSEQLqg9JPs5A9EYpe3UAaWPJxEZPlmPRBPdezzOW+3fxii7FPGTLZnoLvITphcms7CAdcb/bmvNmb
@@ -21007,7 +20993,7 @@ xyn6lvptpg8s6bppfvI8T7UWBfDYl4A7v67+38hsd2ez3f3aqGn+0qhuL+1xecCAR8sjS9E/nOp8vfUV
 		name:    "style.css",
 		local:   "static/style.css",
 		size:    16971,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/+xbe2/iuLv+v58i2tWq050x4wRCgdGRDteWlt4otLRHR8gkJjE4duo43I72ux/lBgQo
 s90d9TLz066G+prXz/u8j19H8YCbc+X/DhRFURwkLMJKCvx28NfBwX8POZNgiAwcN8dlh9B5STm8QBIL
@@ -21066,7 +21052,7 @@ jt/hfMI5bWfYHOtRLr2yh/symGI9/oLj4XKPSPol3ECui5FAzMDrO1z4wivl/Bd5B9DA6MRHASUF5/IF
 		name:    "underscore-min.js",
 		local:   "static/underscore-min.js",
 		size:    18069,
-		modtime: 1581738276,
+		modtime: 1581864343,
 		compressed: `
 H4sIAAAAAAAC/8x8aZPbNprw9/kVEt8ZGniJVkvO7G5CCqNyEmfKSWyn4mTygc3pZVNQE202oICg252m
 /vvWg4OHRDmZqqmt9YcWDxzPheemLy9n8O9nsWWqLqRii7t6tlp8sVj9yb0qtd7Hl5dNN+KuXkh161+j
@@ -21223,7 +21209,6 @@ var _escDirs = map[string][]os.FileInfo{
 	},
 
 	"static/fonts": {
-		_escData["/static/fonts/.DS_Store"],
 		_escData["/static/fonts/material-icons"],
 		_escData["/static/fonts/notosans"],
 	},

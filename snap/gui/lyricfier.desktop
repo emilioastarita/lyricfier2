@@ -1,11 +1,11 @@
 [Desktop Entry]
 Name=Lyricfier
 GenericName=Lyricfier
-Comment=Lyrics for spotify
-Icon=lyricfier
+Comment=Lyrics for Spotify
+Icon=${SNAP}/meta/gui/lyricfier.png
 Terminal=false
 Encoding=UTF-8
-Exec=/usr/bin/lyricfier
+Exec=lyricfier
 Type=Application
 Categories=Audio;Music;
 StartupNotify=true
