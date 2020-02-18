@@ -2,7 +2,7 @@
 Name=Lyricfier
 GenericName=Lyricfier
 Comment=Lyrics for Spotify
-Icon=${SNAP}/meta/gui/lyricfier.png
+Icon=${SNAP}/meta/gui/icon.png
 Terminal=false
 Encoding=UTF-8
 Exec=lyricfier

@@ -30,6 +30,7 @@ func (h *Server) Init(appData *AppData) {
 	s := &http.Server{
 		Addr: appData.Address,
 	}
+	h.e.HidePort = true
 	h.e.HideBanner = true
 	h.e.Logger.Fatal(h.e.StartServer(s))
 }

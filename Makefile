@@ -7,12 +7,13 @@ GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
 BINARY_NAME=build/lyricfier
 GO_SOURCES:=$(shell find lyricfier/ -type f -name '*.go')
+GO_SOURCES_INTERNAL:=$(shell find internal/ -type f -name '*.go')
 STATIC_EMBEDED:=internal/lyricfier/static.go
 STATIC_SOURCES:=$(shell find lyricfier/static/ -type f -name '*')
 
 build: $(BINARY_NAME) $(STATIC_EMBEDED) .deps_updated
 
-$(BINARY_NAME): $(GO_SOURCES)
+$(BINARY_NAME): $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
 	$(GOBUILD) -o $(BINARY_NAME) -v $(GO_SOURCES)
 
 $(STATIC_EMBEDED): $(STATIC_SOURCES)

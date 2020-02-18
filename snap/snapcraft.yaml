@@ -4,7 +4,6 @@ version: '0.1'
 summary: Lyrics search for Spotify app
 description: |
   Lyricfiers lyrics for Spotify.
-icon: snap/gui/icon.png
 grade: stable
 confinement: strict
 
@@ -21,3 +20,6 @@ apps:
     command: bin/lyricfier
     plugs:
       - mpris
+      - network
+      - network-bind
+

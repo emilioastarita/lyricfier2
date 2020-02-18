@@ -2,6 +2,7 @@ package main
 
 import (
 	"flag"
+	"fmt"
 	"github.com/emilioastarita/lyricfier2/internal/lyricfier"
 	"github.com/pkg/browser"
 )
@@ -33,7 +34,9 @@ func main() {
 	}()
 
 	go func() {
-		browser.OpenURL("http://" + *address + ":" + *port)
+		url := "http://" + *address + ":" + *port
+		browser.OpenURL(url)
+		fmt.Printf("=> Open your browser at \033[1;36m%s\033[0m\n", url)
 	}()
 
 	lyricfierMain.StartServer(*address + ":" + *port)
