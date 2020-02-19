@@ -22,4 +22,6 @@ apps:
       - mpris
       - network
       - network-bind
+      - unity7
+      - desktop
 

@@ -39,7 +39,7 @@ func getDataFromTasklist() (bool, string, string) {
 	for _, record := range records {
 		if record[processPos] == "Spotify.exe" && strings.Contains(record[titlePos], "-") {
 			parts := strings.Split(record[titlePos], "-")
-			fmt.Printf("Artista: %s - Canción : %s\n", parts[0], parts[1])
+			fmt.Printf("Artist: %s - Song : %s\n", parts[0], parts[1])
 			return true, parts[0], parts[1]
 		}
 	}
