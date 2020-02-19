@@ -22,18 +22,6 @@ func main() {
 	lyricfierMain = &lyricfier.Main{}
 	lyricfierMain.Init()
 	lyricfierMain.Lookup()
-	go func() {
-		for {
-			select {
-			case <-lyricfierMain.Detector.Changes:
-				lyricfierMain.Lookup()
-			case s := <-lyricfierMain.NewSongChannel:
-				lyricfierMain.ReceiveSong(s)
-			case l := <-lyricfierMain.LyricSearchChannel:
-				lyricfierMain.ReceiveLyric(l)
-			}
-		}
-	}()
 
 	onOpenBrowser := func() {
 		url := "http://" + *address + ":" + *port
@@ -60,6 +48,18 @@ func main() {
 		}()
 		go onOpenBrowser()
 		go func() {
+			go func() {
+				for {
+					select {
+					case <-lyricfierMain.Detector.Changes:
+						lyricfierMain.Lookup()
+					case s := <-lyricfierMain.NewSongChannel:
+						lyricfierMain.ReceiveSong(s)
+					case l := <-lyricfierMain.LyricSearchChannel:
+						lyricfierMain.ReceiveLyric(l)
+					}
+				}
+			}()
 			lyricfierMain.StartServer(*address + ":" + *port)
 		}()
 	}
