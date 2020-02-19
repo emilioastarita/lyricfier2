@@ -1,11 +1,13 @@
 name: lyricfier
 base: core18
-version: '0.1'
+version: '0.2'
 summary: Lyrics search for Spotify app
 description: |
   Lyricfiers lyrics for Spotify.
 grade: stable
 confinement: strict
+environment:
+  TMPDIR: $XDG_RUNTIME_DIR
 
 parts:
   lyricfier:
@@ -15,8 +17,18 @@ parts:
     source-type: git
     build-packages:
       - gcc
+      - libgtk-3-dev
+      - libappindicator3-dev
+      - libwebkit2gtk-4.0-dev
+    stage-packages:
+      - libappindicator3-1
+      - libdbusmenu-glib4
+      - libdbusmenu-gtk3-4
+      - libindicator3-7
+
 apps:
   lyricfier:
+    extensions: [gnome-3-28]
     command: bin/lyricfier
     plugs:
       - mpris
@@ -24,4 +36,6 @@ apps:
       - network-bind
       - unity7
       - desktop
+    environment:
+      TMPDIR: $XDG_RUNTIME_DIR
 
