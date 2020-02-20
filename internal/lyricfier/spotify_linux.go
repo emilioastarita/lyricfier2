@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/godbus/dbus/v5"
 	"os"
+	"time"
 )
 
 type Spotify struct {
@@ -47,9 +48,20 @@ func (h *Spotify) GetMetadata(newSong chan *Song) {
 }
 
 func (h *Spotify) Ticker(changes chan string) {
+	// snap version is not signaling on changes
+	// temporally commented and used timer ticker
+
+	//for {
+	//	select {
+	//	case <-h.ch:
+	//		fmt.Println("Ticker")
+	//		changes <- "yes"
+	//	}
+	//}
+	fpsTicker := time.NewTicker(time.Second * 2)
 	for {
 		select {
-		case <-h.ch:
+		case <-fpsTicker.C:
 			changes <- "yes"
 		}
 	}

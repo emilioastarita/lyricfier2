@@ -47,21 +47,21 @@ func main() {
 			}
 		}()
 		go onOpenBrowser()
+
 		go func() {
-			go func() {
-				for {
-					select {
-					case <-lyricfierMain.Detector.Changes:
-						lyricfierMain.Lookup()
-					case s := <-lyricfierMain.NewSongChannel:
-						lyricfierMain.ReceiveSong(s)
-					case l := <-lyricfierMain.LyricSearchChannel:
-						lyricfierMain.ReceiveLyric(l)
-					}
-				}
-			}()
 			lyricfierMain.StartServer(*address + ":" + *port)
+			for {
+				select {
+				case <-lyricfierMain.Detector.Changes:
+					lyricfierMain.Lookup()
+				case s := <-lyricfierMain.NewSongChannel:
+					lyricfierMain.ReceiveSong(s)
+				case l := <-lyricfierMain.LyricSearchChannel:
+					lyricfierMain.ReceiveLyric(l)
+				}
+			}
 		}()
+
 	}
 	systray.RunWithAppWindow("Lyricfier", 0, 0, onReady, onExit)
 }

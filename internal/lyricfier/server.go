@@ -32,11 +32,12 @@ func (h *Server) Init(appData *AppData) {
 	}
 	h.e.HidePort = true
 	h.e.HideBanner = true
-	h.e.Logger.Fatal(h.e.StartServer(s))
+	go func() {
+		h.e.Logger.Fatal(h.e.StartServer(s))
+	}()
 }
 
 func (h *Server) routes(hub *Hub) {
-	//h.e.Static("static", "static")
 	fs := http.FileServer(FS(false))
 	h.e.GET("/*", echo.WrapHandler(fs))
 	h.e.GET("/", func(c echo.Context) error {
