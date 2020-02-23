@@ -96,16 +96,23 @@ func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 }
 
 func (h *Main) Search(done chan *SearchResult, artist string, title string) {
-	s := &SearchResult{Found: false}
-	s.Source = "Wikia"
-	lyric, e := search.Wikia(artist, normalizeTitle(title))
-	if e != nil || lyric != "" {
-		s.Source = "Genius"
-		lyric, e = search.Genius(artist, normalizeTitle(title))
+	s := &SearchResult{Found: false, Source: "LocalDb"}
+	key := SongKey(artist, title)
+	lyric, e := Read(SongsBucket, key)
+	if lyric == "" || e != nil {
+		s.Source = "Wikia"
+		lyric, e = search.Wikia(artist, normalizeTitle(title))
+		if e != nil || lyric == "" {
+			s.Source = "Genius"
+			lyric, e = search.Genius(artist, normalizeTitle(title))
+		}
 	}
 	if lyric != "" {
 		s.Found = true
 		s.Lyric = lyric
+		if s.Source != "LocalDb" {
+			Write(SongsBucket, key, lyric)
+		}
 	}
 	done <- s
 }

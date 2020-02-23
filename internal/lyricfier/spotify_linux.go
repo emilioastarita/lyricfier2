@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"github.com/godbus/dbus/v5"
 	"os"
+	"path/filepath"
 	"time"
 )
 
@@ -65,4 +66,12 @@ func (h *Spotify) Ticker(changes chan string) {
 			changes <- "yes"
 		}
 	}
+}
+
+func GetDbPath() string {
+	var dir string = os.Getenv("XDG_CONFIG_HOME")
+	if dir == "" {
+		dir = filepath.Join(os.Getenv("HOME"), ".config")
+	}
+	return filepath.Join(dir, "lyricfier")
 }

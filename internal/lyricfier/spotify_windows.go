@@ -70,3 +70,7 @@ func (h *Spotify) Ticker(changes chan string) {
 		}
 	}
 }
+
+func GetDbPath() string {
+	return filepath.join(os.Getenv("APPDATA"), "lyricfier")
+}

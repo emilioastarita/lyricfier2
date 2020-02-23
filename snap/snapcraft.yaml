@@ -14,7 +14,7 @@ parts:
     plugin: go
     go-importpath: github.com/emilioastarita/lyricfier2
     source: .
-    source-type: git
+    source-type: local
     build-packages:
       - gcc
       - libgtk-3-dev
