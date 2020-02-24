@@ -20955,7 +20955,7 @@ syXIDv+3/HAPoct6CXUFqAs/XS/HVFsNq/07AAD//3CqCgbqAwAA
 		name:    "Lyricfier.mjs",
 		local:   "static/modules/Lyricfier.mjs",
 		size:    1540,
-		modtime: 1582545947,
+		modtime: 1582559292,
 		compressed: `
 H4sIAAAAAAAC/3xUwW7bMAy95ys4XeygrV3s6Fa9DPuCYNu1mswk6mwxkOhkxZB/HyTHjuU61UGOH8lH
 8pmMaQ/kGDZkdz8NnmDrqAVRlANQtG9ePK0mbt9rw4lbAC5uK/wb/Wrcqq5h+LcCANDUHsiiZV9dkHCG
@@ -20974,7 +20974,7 @@ l2d1/h8AAP//+DIyBgQGAAA=
 		name:    "SongEdit.mjs",
 		local:   "static/modules/SongEdit.mjs",
 		size:    1736,
-		modtime: 1582545947,
+		modtime: 1582559292,
 		compressed: `
 H4sIAAAAAAAC/4xVUY/jNBB+768YGaS0ujZBiKdsU05a8QAPHGLvnhDivPakMevYxp70tir578h2drdt
 ehKRqtTjmW++zzPj4LOznkBiywdNcFoAADhvXajhjyJYsy/+XCcjYe80J6zhc1pvpTqA0DyEhrWD1psD
@@ -20995,19 +20995,21 @@ bFbvr8KZQetzpNxUi8W4WCz+CwAA//+PBLwayAYAAA==
 	"/static/modules/SongView.mjs": {
 		name:    "SongView.mjs",
 		local:   "static/modules/SongView.mjs",
-		size:    1553,
-		modtime: 1582545947,
+		size:    1814,
+		modtime: 1582560105,
 		compressed: `
-H4sIAAAAAAAC/5RUwW7bMAy95ytYbYAbtLYP7S5OYgwbdtutGHYYhlaRZZmoLAmS4ibL/O+D5cRxkqbb
-coith8dH8ZkkXxttPRS8pCvpYTsBADBWG5fBj8hpJaKftwH0vDaSep7BUzjPC2zy4Q2aGMsF6QISj15y
-AkxS5xakXEkZN9x6ZFTGpeRr0oeF0IrTgts9tz8ROBACaZ96nIRa/81KcswMbGeogmPFx8clZc/C6pUq
-CGTObyRfkG10QGOsqeBRBtHKyusIbkZJ4CaaRi3J52kn/UpGrAWcZaRyuapjan2X0LLja0NGpT9A6DzJ
-x5LH9ad7A9725erImItyB5Pe8Ghn0alBGXT2pM5TjyzFWqTItEqMEtPZ3wy67M8umaFFgUpk8MGsZ7DU
-69jhrwAstS24jZd6PSMQzHztCq+5Cmn+b15Wd/l2C4f+hbadp9XdKet+YPUJetr9qKPTvsAR0o0HYLEg
-cmORfdLrYTYC4MigGc5BchiuY5ldHLO8QO9ip1eWcZI/hGd2Zvxet+dB28JvmFOoLC8X5F2nQeAjk8ie
-E2N5w5VfkB7NvxToIdxnntJxeYexD6/DHU9XwdX/7oKTnhmVq7SPjaQbVCJukL9cDBqa7axHXmjDXeIa
-QSD0yHfa8FLb+m2p6i7/qvUzKgGltkDhQSsBWsGD0R7LzXmHnAiY/LNWijOPSiRJMk/NxXpPjR2ZOjo/
-9cu45r7Shct2C7v7dd/tejoCwtKu0CXveY3+OuoI0W0Pdd9mOhuo7aT/n7STPwEAAP//cVNiPBEGAAA=
+H4sIAAAAAAAC/5RVwW7bOhC8+ys2fA9QjEQi8JJ3kWW1aNFDgd6CooeiSGiJkhahSIKkFLuu/70QZcuy
+HTttDrG4Hs7sjociX2plHOS8YI1wsJ4AAGijtI3he2CVLIMft77oeK0FczyGJ79OcmzT4QnaEIs56TZE
+Dp3gBDLBrJ2TohEibLlxmDERFoIvSb/Nb604y7nZYfsVgT3Ag3bSYxFm3FcjyCHSo61mEg4ZHx8XLHsu
+jWpkTiC2biX4nKyDfTXEmpU8iCFojLgO4GYkAjfBNNiQNKEd9SuKWJdwosjEoqlDZlwnaLLDtiFmwu1L
+aB1Jx5SH89OdAZd9uTow5izd3qQLHm0tOjYohs4eah1zmFGsS4qZkpGW5XT2lkHn/dmKaZbnKMsY/tfL
+GSzUMrT40xcWyuTchAu1nBHwZr7WwmuuAk3/zMvqLl2vYZ9f2GwSWt0do+4HVC/Qw+5Hiab9gKNKdzwA
+8zkRK4PZB7UczoYvWDJw+rWnHA7XIc12X2Z4js6GVjUm4yR98J/xifE73h4Hmw38goRBZXgxJ/90HATe
+ZwKz50gb3nLp5qSvpp9ydOD7SSgbj7c/9v5x6PH4VXD1t++Co8yMxpXKhVqwFcoybJG/nN00hO0kIy+s
+5TaybUnAZ+Qba3mhTH2ZqrpLvyj1jLKEQhlg8KBkCUrCg1YOi9VpQo4IdPpRSckzh7KMoiih+iK8EZe+
+BkgEpp8t2F4dTCNl1xuTOWz9AeZ/8XcJFfg2Vzecn6ziQgNz+3BUzmkbU1qiq5pFlKma8hoFKmYdM+gY
+9dkokJv/SFqpmmtW8i4qbykn9PyUJ+kaJWu0fupvpJq7SuU23t5a3V8X3uvpqOBvrgpt9C+v0V0HHSC4
+7UudUdPZAN1M+v+TzeR3AAAA//91mvE/FgcAAA==
 `,
 	},
 

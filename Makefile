@@ -15,8 +15,11 @@ STATIC_SOURCES:=$(shell find lyricfier/static/ -type f -name '*')
 
 build: $(BINARY_NAME) $(STATIC_EMBEDED) .deps_updated
 
-build-windows:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
-	cd lyricfier/ ; env GOOS=windows GOARCH=amd64 $(GOBUILD) -v  -ldflags -H=windowsgui -o $(BINARY_NAME)-amd64.exe ; cd -
+release-windows:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
+	cd lyricfier/ ; env GOOS=windows GOARCH=amd64 $(GOBUILD) -v  -ldflags -H=windowsgui -o $(BINARY_NAME)-windows-amd64.exe ; cd -
+
+release-darwin:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
+	cd lyricfier/ ; env GOOS=darwin GOARCH=amd64 $(GOBUILD) -v   -o $(BINARY_NAME)-darwin-amd64 ; cd -
 
 $(BINARY_NAME): $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
 	$(GOBUILD) -o $(BINARY_NAME) -v $(GO_SOURCES)

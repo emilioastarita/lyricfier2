@@ -27,6 +27,10 @@ export default {
                           <img src="/static/img/waves.svg" alt="Waveform">
                           <h3>Looking for a Song on Spotify</h3>
                           <p>Connecting...</p>
+                          <ul>
+                            <li>Is spotify running and playing a song?</li>
+                            <li>Look for help at <a href="https://github.com/emilioastarita/lyricfier2">homepage</a></li>
+                          </ul>
                       </div>
     </div>
     
