@@ -2,9 +2,11 @@
 package lyricfier
 
 import (
+	"fmt"
 	"golang.org/x/text/encoding/charmap"
-	"log"
-	"os/exec"
+	"os"
+	. "os/exec"
+	"path/filepath"
 	"strings"
 	"time"
 )
@@ -15,7 +17,7 @@ type Spotify struct {
 func (h *Spotify) Init() {
 }
 func getDataFromAppleScript() (bool, string, string) {
-	cmd := exec.Command("osascript", "-e", `
+	cmd := Command("osascript", "-e", `
 tell application "System Events"
    set processList to (name of every process)
 end tell
@@ -30,7 +32,7 @@ end if
 
 	out, err := cmd.Output()
 	if err != nil {
-		log.Fatal(err)
+		fmt.Println(err, out)
 		return false, "", ""
 	}
 	d := charmap.CodePage850.NewDecoder()
@@ -69,7 +71,7 @@ func (h *Spotify) Ticker(changes chan string) {
 }
 
 func GetDbPath() string {
-	return filepath.join(os.Getenv("HOME"), "/Library/Application Support/lyricfier")
+	return filepath.Join(os.Getenv("HOME"), "/Library/Application Support/lyricfier")
 }
 
 func GetPlatformName() string {

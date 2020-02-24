@@ -5,6 +5,7 @@ import (
 	"github.com/labstack/echo"
 	"html/template"
 	"io"
+	"mime"
 	"net/http"
 	"os"
 )
@@ -30,6 +31,7 @@ func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c 
 }
 
 func (h *Server) Init(appData *AppData) {
+	mime.AddExtensionType(".mjs", "application/javascript")
 	h.hub = newHub()
 	go h.hub.run()
 	h.e = echo.New()
