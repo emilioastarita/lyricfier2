@@ -4,6 +4,8 @@ go 1.13
 
 require (
 	github.com/PuerkitoBio/goquery v1.5.0
+	github.com/akavel/rsrc v0.8.0 // indirect
+	github.com/cratonica/2goarray v0.0.0-20190331194516-514510793eaa // indirect
 	github.com/getlantern/systray v0.0.0-20200109124156-9abdfb6448b3
 	github.com/godbus/dbus/v5 v5.0.3
 	github.com/gorilla/websocket v1.4.0

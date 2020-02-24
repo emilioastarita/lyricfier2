@@ -8,10 +8,9 @@ export default {
     },
     template: `
             <div>
-                <SongView v-if="currentView === 'SongView'" :song="song" v-on:edit="edit" ></SongView>
-                <SongEdit v-if="currentView === 'SongEdit'" :song="editSong" v-on:song-saved="saved"  ></SongEdit>
+                <SongView v-if="currentView === 'SongView'" :song="song" v-on:edit="edit" />
+                <SongEdit v-if="currentView === 'SongEdit'" :song="editSong" v-on:song-saved="saved"  />
             </div>
-    
     `,
     data: function () {
         return {

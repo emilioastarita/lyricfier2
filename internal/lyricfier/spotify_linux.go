@@ -51,7 +51,6 @@ func (h *Spotify) GetMetadata(newSong chan *Song) {
 func (h *Spotify) Ticker(changes chan string) {
 	// snap version is not signaling on changes
 	// temporally commented and used timer ticker
-
 	//for {
 	//	select {
 	//	case <-h.ch:
@@ -59,6 +58,7 @@ func (h *Spotify) Ticker(changes chan string) {
 	//		changes <- "yes"
 	//	}
 	//}
+
 	fpsTicker := time.NewTicker(time.Second * 2)
 	for {
 		select {
@@ -69,9 +69,13 @@ func (h *Spotify) Ticker(changes chan string) {
 }
 
 func GetDbPath() string {
-	var dir string = os.Getenv("XDG_CONFIG_HOME")
+	var dir = os.Getenv("XDG_CONFIG_HOME")
 	if dir == "" {
 		dir = filepath.Join(os.Getenv("HOME"), ".config")
 	}
 	return filepath.Join(dir, "lyricfier")
+}
+
+func GetPlatformName() string {
+	return "linux"
 }

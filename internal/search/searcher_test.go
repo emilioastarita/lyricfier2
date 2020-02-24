@@ -34,5 +34,3 @@ func TestFlagParser(t *testing.T) {
 		})
 	}
 }
-
-

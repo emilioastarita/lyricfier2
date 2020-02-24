@@ -6,7 +6,7 @@ export default {
             <header >
                 <h4>
                 Editing {{ song.artist }} - {{ song.title }}
-                | <a target="_blank" :href="searchInGoogle">Search lyric in Google</a>
+                | <a target="_blank" :href="externalSearchUrl">Search for lyric</a>
                 </h4>
                 
             </header>
@@ -27,9 +27,9 @@ export default {
         }
     },
     computed: {
-        searchInGoogle() {
+        externalSearchUrl() {
             const {artist, title} = this.song;
-            return 'https://www.google.com/search?q=' + encodeURIComponent('+lyrics ' + artist + ' ' + title);
+            return 'https://duckduckgo.com/?q=' + encodeURIComponent('lyrics "' + artist + '" "' + title + '"');
         },
     },
     methods: {

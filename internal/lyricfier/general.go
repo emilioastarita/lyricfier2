@@ -75,6 +75,7 @@ func (h *Main) ReceiveSong(newSong *Song) {
 		h.AppData.SpotifyRunning = false
 		return
 	}
+
 	h.AppData.SpotifyRunning = true
 	if h.AppData.Song.Title != newSong.Title {
 		h.AppData.Song = *newSong

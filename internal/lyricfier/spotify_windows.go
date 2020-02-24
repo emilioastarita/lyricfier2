@@ -4,6 +4,8 @@ package lyricfier
 import (
 	"encoding/csv"
 	"fmt"
+	"path/filepath"
+	"os"
 	"golang.org/x/text/encoding/charmap"
 	"log"
 	"os/exec"
@@ -72,5 +74,9 @@ func (h *Spotify) Ticker(changes chan string) {
 }
 
 func GetDbPath() string {
-	return filepath.join(os.Getenv("APPDATA"), "lyricfier")
+	return filepath.Join(os.Getenv("APPDATA"), "lyricfier")
+}
+
+func GetPlatformName() string {
+	return "windows"
 }
