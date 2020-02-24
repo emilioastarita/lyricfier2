@@ -1,10 +1,12 @@
 package lyricfier
 
 import (
+	"fmt"
 	"github.com/labstack/echo"
 	"html/template"
 	"io"
 	"net/http"
+	"os"
 )
 
 type Server struct {
@@ -15,6 +17,12 @@ type Server struct {
 
 type TemplateRegistry struct {
 	templates *template.Template
+}
+
+type SongPostData struct {
+	Artist string `json:"artist"`
+	Title  string `json:"title"`
+	Lyric  string `json:"lyric"`
 }
 
 func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
@@ -37,15 +45,39 @@ func (h *Server) Init(appData *AppData) {
 	}()
 }
 
+var useLocal = os.Getenv("LOCAL_ASSETS") == "true"
+
 func (h *Server) routes(hub *Hub) {
-	fs := http.FileServer(FS(false))
-	h.e.GET("/*", echo.WrapHandler(fs))
-	h.e.GET("/", func(c echo.Context) error {
-		return c.HTML(http.StatusOK, FSMustString(false, "/static/index.html"))
+	h.e.POST("/save-song", func(c echo.Context) error {
+		s := new(SongPostData)
+		if err := c.Bind(s); err != nil {
+			fmt.Println("save_song", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+		key := SongKey(s.Artist, s.Title)
+		err := Write(SongsBucket, key, s.Lyric)
+		if err != nil {
+			fmt.Println("save_song", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+		if h.appData.Song.Title == s.Title && h.appData.Song.Artist == s.Artist {
+			h.appData.Song.Lyric = s.Lyric
+		}
+		return c.JSON(http.StatusOK, h.appData)
 	})
+
+	fs := http.FileServer(FS(useLocal))
+
+	h.e.GET("/*", echo.WrapHandler(fs))
+
+	h.e.GET("/", func(c echo.Context) error {
+		return c.HTML(http.StatusOK, FSMustString(useLocal, "/static/index.html"))
+	})
+
 	h.e.GET("/status", func(c echo.Context) error {
 		return c.JSON(http.StatusOK, h.appData)
 	})
+
 	h.e.GET("/ws", func(c echo.Context) error {
 		return serveWs(hub, c)
 	})

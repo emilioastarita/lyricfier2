@@ -4,3 +4,6 @@ cmd/deploy/*
 internal/gui/moc*
 internal/gui/rcc*
 .deps_updated
+.flatpak-builder/*
+.idea/*
+prime/*

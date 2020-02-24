@@ -5,7 +5,7 @@ GOGENERATE=$(GOCMD) generate
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-BINARY_NAME=build/lyricfier
+BINARY_NAME=lyricifer/lyricfier
 GO_SOURCES:=$(shell find lyricfier/ -type f -name '*.go')
 GO_SOURCES_INTERNAL:=$(shell find internal/ -type f -name '*.go')
 STATIC_EMBEDED:=internal/lyricfier/static.go
@@ -27,7 +27,7 @@ $(STATIC_EMBEDED): $(STATIC_SOURCES)
 	touch .deps_updated
 
 run: build
-	$(BINARY_NAME)
+	cd lyricfier ; env LOCAL_ASSETS=true ../$(BINARY_NAME) ; cd -
 
 clean:
 	rm $(BINARY_NAME)

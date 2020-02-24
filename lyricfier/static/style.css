@@ -612,6 +612,10 @@ button {
     color: #2ED575;
 }
 
+textarea {
+    width: 80%;
+}
+
 ::-webkit-scrollbar {
     width: 0.5rem;
     height: 0.5rem;
