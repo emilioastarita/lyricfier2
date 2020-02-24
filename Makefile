@@ -1,4 +1,4 @@
-.PHONY: clean run build release format
+.PHONY: clean run build release format releases release-linux release-windows release-darwin
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOFMT=$(GOCMD) fmt
@@ -6,7 +6,8 @@ GOGENERATE=$(GOCMD) generate
 GOCLEAN=$(GOCMD) clean
 GOTEST=$(GOCMD) test
 GOGET=$(GOCMD) get
-BINARY_NAME=$(realpath build/lyricfier)
+BUILD_FOLDER=$(realpath build/)
+BINARY_NAME=$(BUILD_FOLDER)/lyricfier
 STATICS_DIR=$(realpath lyricfier/)
 GO_SOURCES:=$(shell find lyricfier/ -type f -name '*.go')
 GO_SOURCES_INTERNAL:=$(shell find internal/ -type f -name '*.go')
@@ -20,6 +21,11 @@ release-windows:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
 
 release-darwin:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
 	cd lyricfier/ ; env GOOS=darwin GOARCH=amd64 $(GOBUILD) -v   -o $(BINARY_NAME)-darwin-amd64 ; cd -
+
+release-linux:  $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
+	cd lyricfier/ ; env GOOS=linux GOARCH=amd64 $(GOBUILD) -v   -o $(BINARY_NAME)-linux-amd64 ; cd -
+
+releases: release-darwin release-linux release-windows
 
 $(BINARY_NAME): $(GO_SOURCES) $(GO_SOURCES_INTERNAL) $(STATIC_EMBEDED)
 	$(GOBUILD) -o $(BINARY_NAME) -v $(GO_SOURCES)
