@@ -2,6 +2,7 @@ package lyricfier
 
 import (
 	"github.com/emilioastarita/lyricfier2/internal/search"
+	"os"
 	"regexp"
 	"strings"
 )
@@ -26,6 +27,7 @@ type AppData struct {
 	SpotifyRunning bool
 	Searching      bool
 	Address        string
+	RunningInSnap  bool `json:"inSnap"`
 }
 
 type Main struct {
@@ -42,6 +44,7 @@ func (h *Main) Init() {
 	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
 	h.AppData.SpotifyRunning = false
+	h.AppData.RunningInSnap = os.Getenv("RUNNING_IN_SNAP") == "1"
 
 	h.Detector.Init()
 	h.NewSongChannel = make(chan *Song)

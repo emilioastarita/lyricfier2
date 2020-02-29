@@ -529,7 +529,11 @@ body {
     line-height: 1.75;
     margin-bottom: 2rem;
 }
-
+.not-playing-view ul {
+    color: #333;
+    list-style: none;
+    font-size: 0.85rem;
+}
 .settings {
     font-size: 1rem;
     padding: 1em;

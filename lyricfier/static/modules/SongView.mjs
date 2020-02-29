@@ -1,5 +1,5 @@
 export default {
-    props: ['song'],
+    props: ['song', 'inSnap'],
     template: `
     <div>
     <div v-if="song.title" class="full-vertical-flex">
@@ -23,15 +23,26 @@ export default {
     </div>    
     
     <div v-if="!song.title" class="full-vertical-flex">
-                      <div class="not-playing-view">
-                          <img src="/static/img/waves.svg" alt="Waveform">
-                          <h3>Looking for a Song on Spotify</h3>
-                          <p>Connecting...</p>
-                          <ul>
-                            <li>Is spotify running and playing a song?</li>
-                            <li>Look for help at <a href="https://github.com/emilioastarita/lyricfier2">homepage</a></li>
-                          </ul>
-                      </div>
+              <div class="not-playing-view">
+                  <img src="/static/img/waves.svg" alt="Waveform">
+                  <h3>Looking for a Song on Spotify</h3>
+                  
+                   <p>Is spotify running and playing a song?</p>
+                    
+                    <template v-if="inSnap">
+<p>
+    Looks like you are running the "snap" version of Lyrcifer.<br />
+                        Have you allowed Spotify connection?<br />
+                        Run in terminal:                    
+
+<pre style="background: #444; color: #15ff1c; padding: 5px; text-align: center">sudo snap connect lyricfier:mpris spotify:spotify-mpris</pre>
+</p>                    
+                    
+                    </template>
+
+                  <p>Look for help at <a href="https://github.com/emilioastarita/lyricfier2">homepage</a></p>  
+                  
+              </div>
     </div>
     
     </div>

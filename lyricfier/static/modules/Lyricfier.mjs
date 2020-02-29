@@ -8,7 +8,7 @@ export default {
     },
     template: `
             <div>
-                <SongView v-if="currentView === 'SongView'" :song="song" v-on:edit="edit" />
+                <SongView v-if="currentView === 'SongView'" :song="song" :in-snap="inSnap" v-on:edit="edit" />
                 <SongEdit v-if="currentView === 'SongEdit'" :song="editSong" v-on:song-saved="saved"  />
             </div>
     `,
@@ -22,6 +22,7 @@ export default {
                 artUrl: '',
                 source: '',
             },
+            inSnap: false,
             editSong: null,
         }
     },
@@ -43,6 +44,7 @@ export default {
             }
             const data = await response.json();
             this.song = data.song;
+            this.inSnap = data.inSnap;
         },
         edit(song) {
             this.editSong = song;

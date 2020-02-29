@@ -17,6 +17,7 @@ parts:
     source-type: local
     build-packages:
       - gcc
+      - git
       - libgtk-3-dev
       - libappindicator3-dev
       - libwebkit2gtk-4.0-dev
@@ -38,4 +39,5 @@ apps:
       - desktop
     environment:
       TMPDIR: $XDG_RUNTIME_DIR
+      RUNNING_IN_SNAP: 1
 
