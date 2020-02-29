@@ -1,15 +1,17 @@
 import SongView from "./SongView.mjs";
 import SongEdit from "./SongEdit.mjs";
+import Connecting from "./Connecting.mjs";
 import VueRouter from "./vue-router.mjs";
 
 
 const routes = [
-    { path: '/', component: SongView },
-    { path: '/edit', component: SongEdit }
-]
+    { path: '/', component: Connecting, name: 'connecting' },
+    { path: '/view', component: SongView, name: 'view' },
+    { path: '/edit', component: SongEdit, name: 'edit' }
+];
 
 const router = new VueRouter({
-    routes // short for `routes: routes`
+    routes
 });
 
 
@@ -20,7 +22,7 @@ export default {
         SongEdit,
     },
     template: `
-            <div>
+            <div :class="{'main-view': true, 'dark': data.settings.theme === 'dark'}">
                 <router-view :data="data" v-on:edit="edit" v-on:song-saved="saved" ></router-view>
             </div>
     `,
@@ -36,6 +38,9 @@ export default {
                 },
                 inSnap: false,
                 editSong: null,
+                settings: {
+                    theme: 'default',
+                }
             }
         }
     },
@@ -58,16 +63,19 @@ export default {
             const data = await response.json();
             this.data.song = data.song;
             this.data.inSnap = data.inSnap;
+            if (this.$router.currentRoute.name === 'connecting' && this.data.song.title) {
+                this.$router.push({ name: `view`});
+            }
         },
         edit(song) {
             this.data.editSong = song;
-            this.$router.push({ path: `/edit`});
+            this.$router.push({ name: `edit`});
         },
         saved(song) {
             if (song) {
                 this.data.song.lyric = song.lyric;
             }
-            this.$router.push({ path: `/`});
+            this.$router.push({ name: `view`});
         }
     }
 }
