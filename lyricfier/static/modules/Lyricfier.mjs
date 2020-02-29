@@ -1,29 +1,42 @@
 import SongView from "./SongView.mjs";
 import SongEdit from "./SongEdit.mjs";
+import VueRouter from "./vue-router.mjs";
+
+
+const routes = [
+    { path: '/', component: SongView },
+    { path: '/edit', component: SongEdit }
+]
+
+const router = new VueRouter({
+    routes // short for `routes: routes`
+});
+
 
 export default {
+    router,
     components: {
         SongView,
         SongEdit,
     },
     template: `
             <div>
-                <SongView v-if="currentView === 'SongView'" :song="song" :in-snap="inSnap" v-on:edit="edit" />
-                <SongEdit v-if="currentView === 'SongEdit'" :song="editSong" v-on:song-saved="saved"  />
+                <router-view :data="data" v-on:edit="edit" v-on:song-saved="saved" ></router-view>
             </div>
     `,
     data: function () {
         return {
-            currentView: 'SongView',
-            song: {
-                title: '',
-                artist: '',
-                lyric: '',
-                artUrl: '',
-                source: '',
-            },
-            inSnap: false,
-            editSong: null,
+            data: {
+                song: {
+                    title: '',
+                    artist: '',
+                    lyric: '',
+                    artUrl: '',
+                    source: '',
+                },
+                inSnap: false,
+                editSong: null,
+            }
         }
     },
     mounted() {
@@ -43,18 +56,18 @@ export default {
                 return;
             }
             const data = await response.json();
-            this.song = data.song;
-            this.inSnap = data.inSnap;
+            this.data.song = data.song;
+            this.data.inSnap = data.inSnap;
         },
         edit(song) {
-            this.editSong = song;
-            this.currentView = 'SongEdit';
+            this.data.editSong = song;
+            this.$router.push({ path: `/edit`});
         },
         saved(song) {
             if (song) {
-                this.song.lyric = song.lyric;
+                this.data.song.lyric = song.lyric;
             }
-            this.currentView = 'SongView'
+            this.$router.push({ path: `/`});
         }
     }
 }

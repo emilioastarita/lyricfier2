@@ -1,5 +1,5 @@
 export default {
-    props: ['song', 'inSnap'],
+    props: ['data'],
     template: `
     <div>
     <div v-if="song.title" class="full-vertical-flex">
@@ -29,7 +29,7 @@ export default {
                   
                    <p>Is spotify running and playing a song?</p>
                     
-                    <template v-if="inSnap">
+                    <template v-if="data.inSnap">
 <p>
     Looks like you are running the "snap" version of Lyrcifer.<br />
                         Have you allowed Spotify connection?<br />
@@ -51,6 +51,11 @@ export default {
     methods: {
         edit() {
             this.$emit('edit', this.song);
+        }
+    },
+    computed: {
+        song() {
+            return this.data.song;
         }
     }
 

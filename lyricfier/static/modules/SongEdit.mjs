@@ -1,5 +1,5 @@
 export default {
-    props: ['song'],
+    props: ['data'],
     template: `
     <div class="full-vertical-flex settings-container">
         <form @submit.prevent="submit" method="post" action="#">
@@ -27,6 +27,9 @@ export default {
         }
     },
     computed: {
+        song() {
+          return this.data.song;
+        },
         externalSearchUrl() {
             const {artist, title} = this.song;
             return 'https://duckduckgo.com/?q=' + encodeURIComponent('lyrics "' + artist + '" "' + title + '"');
@@ -35,7 +38,6 @@ export default {
     methods: {
         async submit() {
             const url = document.location.protocol + '//' + document.location.host + '/save-song';
-            console.log('url', url)
             const res = await fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(this.song),
