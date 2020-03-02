@@ -9,6 +9,8 @@ import (
 )
 
 var SongsBucket = []byte("songsBucket")
+var GeneralBucket = []byte("general")
+var SettingsKey = "settings"
 
 func SongKey(artist string, title string) string {
 	return "__artist__" + artist + "__title__" + title
@@ -26,28 +28,31 @@ func Open() (*bolt.DB, error) {
 	return bolt.Open(dbPath, os.ModePerm, nil)
 }
 
-func Read(bucket []byte, key string) (string, error) {
+func Read(bucket []byte, key string) ([]byte, error) {
 	var db, err = Open()
 	if err != nil {
-		return "", err
+		return nil, err
 	}
 	defer db.Close()
-	var val string
+	var val []byte
 	err = db.View(func(tx *bolt.Tx) error {
 		bucket := tx.Bucket(bucket)
 		if bucket == nil {
 			return errors.New("BUCKET_NOT_CREATED")
 		}
-		val = string(bucket.Get([]byte(key)))
+		val = bucket.Get([]byte(key))
 		return nil
 	})
 	if err != nil {
 		fmt.Println("err_read", err)
+		return nil, err
 	}
-	return string(val), err
+	res := make([]byte, len(val), cap(val)+1)
+	copy(res, val)
+	return res, err
 }
 
-func Write(bucket []byte, key string, value string) error {
+func Write(bucket []byte, key string, value []byte) error {
 	var db, err = Open()
 	if err != nil {
 		fmt.Println("err_write", err)
@@ -59,7 +64,7 @@ func Write(bucket []byte, key string, value string) error {
 		if err != nil {
 			return err
 		}
-		return bucket.Put([]byte(key), []byte(value))
+		return bucket.Put([]byte(key), value)
 	})
 	if err != nil {
 		fmt.Println("err_write", err)

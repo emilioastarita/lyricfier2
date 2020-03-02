@@ -1,6 +1,8 @@
 package lyricfier
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/emilioastarita/lyricfier2/internal/search"
 	"os"
 	"regexp"
@@ -28,6 +30,12 @@ type AppData struct {
 	Searching      bool
 	Address        string
 	RunningInSnap  bool `json:"inSnap"`
+	Settings       *Settings `json:"settings"`
+}
+
+type Settings struct {
+	Theme    string `json:"theme"`
+	FontSize string `json: "fontSize"`
 }
 
 type Main struct {
@@ -41,6 +49,7 @@ type Main struct {
 
 func (h *Main) Init() {
 	h.AppData = &AppData{}
+	h.ReadSettings()
 	h.Detector = DetectCurrentSong{}
 	h.searchLock = false
 	h.AppData.SpotifyRunning = false
@@ -91,6 +100,7 @@ func (h *Main) ReceiveSong(newSong *Song) {
 	}
 	h.server.NotifyChanges()
 }
+
 func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 	h.AppData.Searching = false
 	h.AppData.Song.Lyric = newLyric.Lyric
@@ -99,11 +109,37 @@ func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 	h.server.NotifyChanges()
 }
 
+func defaultSettings() *Settings {
+	s := new(Settings)
+	s.Theme = "default"
+	s.FontSize = "1"
+	return s
+}
+
+func (h *Main) ReadSettings() {
+	val, err := Read(GeneralBucket, SettingsKey)
+	if err != nil {
+		fmt.Printf("error reading settings %v\n", err)
+		h.AppData.Settings = defaultSettings()
+		return
+	}
+	err = json.Unmarshal(val, h.AppData.Settings)
+	if err != nil {
+		fmt.Printf("error umarshalling saved settings %v\n", err)
+		h.AppData.Settings = defaultSettings()
+		return
+	}
+}
+
 func (h *Main) Search(done chan *SearchResult, artist string, title string) {
 	s := &SearchResult{Found: false, Source: "LocalDb"}
 	key := SongKey(artist, title)
-	lyric, e := Read(SongsBucket, key)
-	if lyric == "" || e != nil {
+	val, e := Read(SongsBucket, key)
+	var lyric = ""
+	if e == nil {
+		lyric = string(val)
+	}
+	if lyric == "" {
 		s.Source = "Wikia"
 		lyric, e = search.Wikia(artist, normalizeTitle(title))
 		if e != nil || lyric == "" {
@@ -115,7 +151,7 @@ func (h *Main) Search(done chan *SearchResult, artist string, title string) {
 		s.Found = true
 		s.Lyric = lyric
 		if s.Source != "LocalDb" {
-			Write(SongsBucket, key, lyric)
+			Write(SongsBucket, key, []byte(lyric))
 		}
 	}
 	done <- s

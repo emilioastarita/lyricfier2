@@ -1,8 +1,11 @@
 import SongHeader from "./SongHeader.mjs";
+import SongFooter from "./SongFooter.mjs";
+import {SAVED_SONG, Bus} from "./Events.mjs";
 
 export default {
     components: {
-        SongHeader
+        SongHeader,
+        SongFooter
     },
     props: ['data'],
     template: `
@@ -24,6 +27,7 @@ export default {
                 </p>            
             </div>
         </form>
+        <SongFooter :song="song" v-if="song" />
     </div>    
 `,
     data: function() {
@@ -58,10 +62,10 @@ export default {
                 }
             });
             const data = await res.json();
-            this.$emit('song-saved', data.song);
+            Bus.$emit(SAVED_SONG, data.song);
         },
         cancel() {
-            this.$emit('song-saved', null);
+            Bus.$emit(SAVED_SONG, null);
         }
     }
 

@@ -1,6 +1,7 @@
 package lyricfier
 
 import (
+	"encoding/json"
 	"fmt"
 	"github.com/labstack/echo"
 	"html/template"
@@ -25,6 +26,7 @@ type SongPostData struct {
 	Title  string `json:"title"`
 	Lyric  string `json:"lyric"`
 }
+
 
 func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
 	return t.templates.ExecuteTemplate(w, name, data)
@@ -53,18 +55,38 @@ func (h *Server) routes(hub *Hub) {
 	h.e.POST("/save-song", func(c echo.Context) error {
 		s := new(SongPostData)
 		if err := c.Bind(s); err != nil {
-			fmt.Println("save_song", err)
+			fmt.Printf("save_song %v\n", err)
 			return c.JSON(http.StatusInternalServerError, h.appData)
 		}
 		key := SongKey(s.Artist, s.Title)
-		err := Write(SongsBucket, key, s.Lyric)
+		err := Write(SongsBucket, key, []byte(s.Lyric))
 		if err != nil {
-			fmt.Println("save_song", err)
+			fmt.Printf("save_song %v\n", err)
 			return c.JSON(http.StatusInternalServerError, h.appData)
 		}
 		if h.appData.Song.Title == s.Title && h.appData.Song.Artist == s.Artist {
 			h.appData.Song.Lyric = s.Lyric
 		}
+		return c.JSON(http.StatusOK, h.appData)
+	})
+	h.e.POST("/save-settings", func(c echo.Context) error {
+		s := new(Settings)
+		if err := c.Bind(s); err != nil {
+			fmt.Printf("save_song %v\n", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+		settings, err := json.Marshal(s)
+		if err != nil {
+			fmt.Printf("could not marshal config json: %v\n", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+
+		err = Write(GeneralBucket, SettingsKey, settings)
+		if err != nil {
+			fmt.Printf("save_song: %v", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+		h.appData.Settings = s
 		return c.JSON(http.StatusOK, h.appData)
 	})
 
