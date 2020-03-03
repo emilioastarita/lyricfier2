@@ -34,8 +34,9 @@ type AppData struct {
 }
 
 type Settings struct {
-	Theme    string `json:"theme"`
-	FontSize string `json: "fontSize"`
+	Theme     string `json:"theme"`
+	FontSize  int    `json:"fontSize"`
+	TextAlign string `json:"textAlign"`
 }
 
 type Main struct {
@@ -112,7 +113,8 @@ func (h *Main) ReceiveLyric(newLyric *SearchResult) {
 func defaultSettings() *Settings {
 	s := new(Settings)
 	s.Theme = "default"
-	s.FontSize = "1"
+	s.TextAlign = "left"
+	s.FontSize = 15
 	return s
 }
 

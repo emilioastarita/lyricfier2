@@ -1,7 +1,7 @@
 export default {
     props: ['song'],
     template: `
-        <header class="header" >
+        <header class="header"  >
             <template v-if="song.artUrl">
                 <span  class="header__background" :style="{'background-image': 'url(' +song.artUrl +')'}"></span>
                 <img   class="header__album-art" :src="song.artUrl" :alt="song.artist">            

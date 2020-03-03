@@ -46,7 +46,8 @@ export default {
                 editSettings: null,
                 settings: {
                     theme: 'default',
-                    fontSize: '1',
+                    fontSize: 11,
+                    textAlign: 'left',
                 }
             }
         }
