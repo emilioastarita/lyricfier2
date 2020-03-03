@@ -21075,15 +21075,15 @@ TqK/tuIzAAD//+csEoxfAgAA
 	"/static/modules/SongHeader.mjs": {
 		name:    "SongHeader.mjs",
 		local:   "static/modules/SongHeader.mjs",
-		size:    806,
-		modtime: 1582978293,
+		size:    807,
+		modtime: 1583193822,
 		compressed: `
 H4sIAAAAAAAC/4yQwXLqIBSG93mKc9lwHY0s9G4w5i3uqtNRkiAyJYEB0kmbybt3QtQYq7bsOPPx/5yP
-N0ZbDwU/sFp5aCMAAGO1cRResNOVwK+LMPS8NIp5TmEf7v1JjpwV3EKumHNbNNwQpBcgQOeX8B7Lwxb1
-oUtm/X+r0JQMtDOsgmnibpex/E1YXVcFAur8h+Jb1OJxGsuSCY4p4NqqvxjmVyUwxzPcoTQhffSdRlkK
-+NbIVFaXMbO+L7T59NtAmfLjSDqP0uvI6f7kLOC5lz8TMQ/jRklPHJ0U3Qqi0OshzjMvcyJLQWSuq6Wp
-xGzzk6DHfk5lhhWFrASFf6bZQKab2MnPMMi0LbiNM91sEASZ975wzyqQ9Hcuj6u0bSE89dIrDl2XkOPq
-llpfqKFgwNYjlpBhwZP/aL+Ioi76CgAA//+sobwLJgMAAA==
+N0ZbDwU/sFp5aCMAAGO1cRResNOVwK+LMPS8NIp5TmEf7v1JjpwV3EKumHNbNNwQQHohAnV+Cu+xPGxR
+n7pk1v+3Ck3JQDvDKphG7nYZy9+E1XVVIKDOfyi+RS0ep7EsmeCYAq6t+othflUCczzDHUoT0kffaZSl
+gG+NTGV1GTPr+0KbT78NlCk/jqTzKL2OnO5PzgKee/kzEfMwbpT0xNFJ0a0gCr0e4jzzMieyFETmulqa
+Ssw2Pwl67OdUZlhRyEpQ+GeaDWS6iZ38DINM24LbONPNBkGQee8L96wCSX/n8rhK2xbCUy+94tB1CTmu
+bqn1hRoKBmw9YgkZFjz5j/aLKOqirwAAAP//EmptKycDAAA=
 `,
 	},
 
@@ -21091,7 +21091,7 @@ llpfqKFgwNYjlpBhwZP/aL+Ioi76CgAA//+sobwLJgMAAA==
 		name:    "SongView.mjs",
 		local:   "static/modules/SongView.mjs",
 		size:    716,
-		modtime: 1583193570,
+		modtime: 1583193822,
 		compressed: `
 H4sIAAAAAAAC/5SSQW+jMBCF7/yKkS/e1QZyd0Kk3cOq9xyrSrHwQF0ZG9lDRIL475UhEBrl0PqA7Mc3
 bzwPdN04T3B0tnpBqdBD6V0NLNvepaz+CGyXrND/ztEDOkk3NMFuZBWWsjUEfQIAULi6cRYtBXFT4rr3
