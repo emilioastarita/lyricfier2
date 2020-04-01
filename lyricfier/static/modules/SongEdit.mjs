@@ -1,5 +1,6 @@
 import SongHeader from "./SongHeader.mjs";
 import SongFooter from "./SongFooter.mjs";
+import {service} from "./Service.mjs";
 import {SAVED_SONG, Bus} from "./Events.mjs";
 
 export default {
@@ -48,20 +49,12 @@ export default {
         },
         externalSearchUrl() {
             const {artist, title} = this.song;
-            return 'https://duckduckgo.com/?q=\\' + encodeURIComponent('lyrics "' + artist + '" "' + title + '"');
+            return 'https://duckduckgo.com/?q=' + encodeURIComponent('lyrics "' + artist + '" "' + title + '"');
         },
     },
     methods: {
         async submit() {
-            const url = document.location.protocol + '//' + document.location.host + '/save-song';
-            const res = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(this.song),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            });
-            const data = await res.json();
+            const data = await service.saveSong(this.song);
             Bus.$emit(SAVED_SONG, data.song);
         },
         cancel() {

@@ -482,6 +482,7 @@ body {
 
 a {
     color: #03A9F4;
+    text-decoration: none;
 }
 
 .not-playing-view {
@@ -584,22 +585,20 @@ a {
 
 .button,
 button {
-    font-stretch: condensed;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-size: 16px;
     text-decoration: none;
     line-height: 3rem;
     padding: 0 1.5rem;
     display: inline-block;
-    border: 0.125rem solid #2ED575;
+    border: 0.125rem solid #03A9F4;
     border-radius: 1.75rem;
-    color: #2ED575;
+    color: #03A9F4;
     cursor: pointer;
+    background: #eeefff;
 }
 
 .dark .button,
 .dark button {
-
     background: transparent;
 }
 textarea {

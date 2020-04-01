@@ -1,4 +1,4 @@
-import {Bus, EDIT_SONG, EDIT_SETTINGS} from "./Events.mjs";
+import {Bus, EDIT_SONG, EDIT_SETTINGS, SONGS_LIST} from "./Events.mjs";
 
 
 export default {
@@ -8,7 +8,8 @@ export default {
             <div class="credits-source">Source:
                 {{ song.source }} | 
                 <a href="#edit" @click.prevent="editSong" >Edit lyric</a> |
-                <a href="#edit" @click.prevent="editSettings" >Settings</a> |
+                <a href="#settings" @click.prevent="editSettings" >Settings</a> |
+                <a href="#songs" @click.prevent="songsList" >Songs</a> |
             </div>
         </footer>      
 `,
@@ -18,6 +19,9 @@ export default {
         },
         editSettings() {
             Bus.$emit(EDIT_SETTINGS);
+        },
+        songsList() {
+            Bus.$emit(SONGS_LIST);
         }
     }
 }

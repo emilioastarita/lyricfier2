@@ -1,16 +1,19 @@
 import SongView from "./SongView.mjs";
 import Settings from "./Settings.mjs";
+import Songs from "./Songs.mjs";
 import SongEdit from "./SongEdit.mjs";
 import Connecting from "./Connecting.mjs";
 import VueRouter from "./vue-router.mjs";
-import {Bus, EDIT_SONG, SAVED_SONG, EDIT_SETTINGS, SAVED_SETTINGS} from "./Events.mjs";
+import {service} from "./Service.mjs";
+import {Bus, EDIT_SONG, SAVED_SONG, EDIT_SETTINGS, SAVED_SETTINGS, SONGS_LIST} from "./Events.mjs";
 
 
 const routes = [
     { path: '/', component: Connecting, name: 'connecting' },
     { path: '/view', component: SongView, name: 'view' },
     { path: '/edit', component: SongEdit, name: 'edit' },
-    { path: '/settings', component: Settings, name: 'settings' }
+    { path: '/settings', component: Settings, name: 'settings' },
+    { path: '/songs', component: Songs, name: 'songs' }
 ];
 
 const router = new VueRouter({
@@ -48,31 +51,25 @@ export default {
                     theme: 'default',
                     fontSize: 11,
                     textAlign: 'left',
-                }
+                },
+                songs: null,
             }
         }
     },
     mounted() {
         this.update(['song', 'settings', 'inSnap']);
-        const conn = new WebSocket("ws://" + document.location.host + "/ws");
-        conn.onclose = evt => {
-            console.log('Connection error', evt)
-        };
-        conn.onmessage = () => {
+        service.connectUpdates(() => {
             this.update();
-        };
+        });
         Bus.$on(EDIT_SONG, this.editSong);
+        Bus.$on(SONGS_LIST, this.songsList);
         Bus.$on(SAVED_SONG, this.savedSong);
         Bus.$on(SAVED_SETTINGS, this.savedSettings);
         Bus.$on(EDIT_SETTINGS, this.editSettings);
     },
     methods: {
         async update(props = ['song']) {
-            const response = await fetch('/status');
-            if (response.status !== 200) {
-                return;
-            }
-            const data = await response.json();
+            const data = await service.getLyricfierStatus();
             for (let prop of props) {
                 this.data[prop] = data[prop];
             }
@@ -83,6 +80,9 @@ export default {
         editSong(song) {
             this.data.editSong = song;
             this.$router.push({ name: `edit`});
+        },
+        songsList() {
+            this.$router.push({ name: `songs`});
         },
         editSettings() {
             this.data.editSettings = {...this.data.settings};

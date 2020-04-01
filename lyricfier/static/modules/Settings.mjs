@@ -1,4 +1,5 @@
 import {Bus, SAVED_SETTINGS, EDIT_SETTINGS} from "./Events.mjs";
+import {service} from "./Service.mjs";
 
 
 export default {
@@ -46,15 +47,7 @@ export default {
     },
     methods: {
         async submit() {
-            const url = document.location.protocol + '//' + document.location.host + '/save-settings';
-            const res = await fetch(url, {
-                method: 'POST',
-                body: JSON.stringify(this.data.editSettings),
-                headers:{
-                    'Content-Type': 'application/json'
-                }
-            });
-            const data = await res.json();
+            const data = await service.saveSettings(this.data.editSettings);
             Bus.$emit(SAVED_SETTINGS, data.settings);
         },
         cancel() {
