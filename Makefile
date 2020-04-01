@@ -1,4 +1,7 @@
 .PHONY: clean run build release format releases release-linux release-windows release-darwin
+VERSION = $$(git describe --abbrev=0 --tags)
+VERSION_DATE = $$(git log -1 --pretty='%ad' --date=format:'%Y-%m-%d' $(VERSION))
+COMMIT_REV = $$(git rev-list -n 1 $(VERSION))
 GOCMD=go
 GOBUILD=$(GOCMD) build
 GOFMT=$(GOCMD) fmt
