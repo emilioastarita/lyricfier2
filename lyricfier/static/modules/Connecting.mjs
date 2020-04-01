@@ -12,7 +12,7 @@ export default {
                     
                     <template v-if="data.inSnap">
 <p>
-    Looks like you are running the "snap" version of Lyrcifer.<br />
+    Looks like you are running the "snap" version of Lyricfier.<br />
                         Have you allowed Spotify connection?<br />
                         Run in terminal:                    
 
