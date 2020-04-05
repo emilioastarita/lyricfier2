@@ -1,4 +1,3 @@
-
 class Service {
     baseUrl = '';
     socket = null;
@@ -18,15 +17,31 @@ class Service {
         return `${this.baseUrl}${endPoint}`;
     }
 
-    async saveSong(songData) {
-        const url = this.url('/save-song');
+    async post(path, data) {
+        const url = this.url(path);
         const res = await fetch(url, {
             method: 'POST',
-            body: JSON.stringify(songData),
-            headers:{
+            body: JSON.stringify(data),
+            headers: {
                 'Content-Type': 'application/json'
             }
         });
+        return await res.json();
+    }
+
+    async get(path, data) {
+        const url = this.url(path);
+        const res = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        if (res.status !== 200) {
+            console.error('Response error', res);
+            return new Error(`Error GET fetching: ${url}.`);
+        }
         return await res.json();
     }
 
@@ -38,26 +53,16 @@ class Service {
         conn.onmessage = update;
     }
 
+    async saveSong(songData) {
+        return this.post(`/save-song`, songData);
+    }
+
     async getLyricfierStatus() {
-        const response = await fetch('/status');
-        if (response.status !== 200) {
-            console.error('Response error', response);
-            return new Error('Error lyricfier status');
-        }
-        const data = await response.json();
-        return data;
+        return this.get(`/status`)
     }
 
     async saveSettings(settings) {
-        const url = document.location.protocol + '//' + document.location.host + '/save-settings';
-        const res = await fetch(url, {
-            method: 'POST',
-            body: JSON.stringify(settings),
-            headers:{
-                'Content-Type': 'application/json'
-            }
-        });
-        const data = await res.json();
+        return this.post(`/save-settings`, settings);
     }
 }
 
