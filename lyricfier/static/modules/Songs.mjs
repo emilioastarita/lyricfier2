@@ -8,9 +8,11 @@ export default {
         <div class="songs-container">
             <h3>
                  <a href="/" @click.prevent="cancel">Back</a> |
-                 Songs
+                 Locally Saved Songs ({{data.songs.length}})
             </h3>
-
+            <ul>
+                <li v-for="song in data.songs">{{song.title}} - {{song.artist}}</li>
+            </ul>
         </div>
     </div>    
 `,

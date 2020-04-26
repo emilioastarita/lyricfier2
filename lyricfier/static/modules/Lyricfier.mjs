@@ -9,11 +9,11 @@ import {Bus, EDIT_SONG, SAVED_SONG, EDIT_SETTINGS, SAVED_SETTINGS, SONGS_LIST} f
 
 
 const routes = [
-    { path: '/', component: Connecting, name: 'connecting' },
-    { path: '/view', component: SongView, name: 'view' },
-    { path: '/edit', component: SongEdit, name: 'edit' },
-    { path: '/settings', component: Settings, name: 'settings' },
-    { path: '/songs', component: Songs, name: 'songs' }
+    {path: '/', component: Connecting, name: 'connecting'},
+    {path: '/view', component: SongView, name: 'view'},
+    {path: '/edit', component: SongEdit, name: 'edit'},
+    {path: '/settings', component: Settings, name: 'settings'},
+    {path: '/songs', component: Songs, name: 'songs'}
 ];
 
 const router = new VueRouter({
@@ -74,32 +74,33 @@ export default {
                 this.data[prop] = data[prop];
             }
             if (this.$router.currentRoute.name === 'connecting' && this.data.song.title) {
-                this.$router.push({ name: `view`});
+                this.$router.push({name: `view`});
             }
         },
         editSong(song) {
             this.data.editSong = song;
-            this.$router.push({ name: `edit`});
+            this.$router.push({name: `edit`});
         },
-        songsList() {
-            this.$router.push({ name: `songs`});
+        async songsList() {
+            this.data.songs = await service.getSongs();
+            this.$router.push({name: `songs`});
         },
         editSettings() {
             this.data.editSettings = {...this.data.settings};
-            this.$router.push({ name: `settings`});
+            this.$router.push({name: `settings`});
         },
         savedSong(song) {
             if (song) {
                 this.data.song.lyric = song.lyric;
             }
-            this.$router.push({ name: `view`});
+            this.$router.push({name: `view`});
         },
         savedSettings(settings) {
             this.data.editSettings = null;
             if (settings) {
                 this.data.settings = settings;
             }
-            this.$router.push({ name: `view`});
+            this.$router.push({name: `view`});
         }
     }
 }

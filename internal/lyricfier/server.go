@@ -27,7 +27,6 @@ type SongPostData struct {
 	Lyric  string `json:"lyric"`
 }
 
-
 func (t *TemplateRegistry) Render(w io.Writer, name string, data interface{}, c echo.Context) error {
 	return t.templates.ExecuteTemplate(w, name, data)
 }
@@ -52,6 +51,14 @@ func (h *Server) Init(appData *AppData) {
 var useLocal = os.Getenv("LOCAL_ASSETS") == "true"
 
 func (h *Server) routes(hub *Hub) {
+	h.e.GET("/songs", func(c echo.Context) error {
+		var list []*SongItem
+		if err := ListSongs(&list); err != nil {
+			fmt.Printf("list_songs %v\n", err)
+			return c.JSON(http.StatusInternalServerError, h.appData)
+		}
+		return c.JSON(http.StatusOK, list)
+	})
 	h.e.POST("/save-song", func(c echo.Context) error {
 		s := new(SongPostData)
 		if err := c.Bind(s); err != nil {

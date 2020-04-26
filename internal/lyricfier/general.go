@@ -18,6 +18,11 @@ type Song struct {
 	Source     string `json:"source"`
 }
 
+type SongItem struct {
+	Title  string `json:"title"`
+	Artist string `json:"artist"`
+}
+
 type SearchResult struct {
 	Found  bool
 	Lyric  string
@@ -29,7 +34,7 @@ type AppData struct {
 	SpotifyRunning bool
 	Searching      bool
 	Address        string
-	RunningInSnap  bool `json:"inSnap"`
+	RunningInSnap  bool      `json:"inSnap"`
 	Settings       *Settings `json:"settings"`
 }
 

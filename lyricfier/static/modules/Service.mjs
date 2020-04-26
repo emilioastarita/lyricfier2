@@ -61,6 +61,10 @@ class Service {
         return this.get(`/status`)
     }
 
+    async getSongs() {
+        return this.get(`/songs`)
+    }
+
     async saveSettings(settings) {
         return this.post(`/save-settings`, settings);
     }
