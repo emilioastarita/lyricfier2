@@ -21075,15 +21075,16 @@ D135cZtLt0qNaUKki8VpsVj8EwAA//+dGKpX3gcAAA==
 	"/static/modules/SongFooter.mjs": {
 		name:    "SongFooter.mjs",
 		local:   "static/modules/SongFooter.mjs",
-		size:    764,
-		modtime: 1592868680,
+		size:    879,
+		modtime: 1592943960,
 		compressed: `
-H4sIAAAAAAAC/4SSQW+6QBDF73yKyf7/iZpQuCOSxpQYE2MPcGsaJbDotsCSncG0Qb57syCoqdU5wM7j
-5ce+3RF5KRVBPa/QBP9lGW6C1/WiX/phuFwvAhO0GGxWyyBsIFUyB2bZ/oEXhFb+gWxqGAb/akkJT6Mq
-I6gNAIBSyRIdeBuhLHajd7MViedlFhF3YNv2utxUSuIK4ixCnLGuY+ANhtaUiEPviBVPBOETykrFnHlB
-+3au/LrqGvS/rc4HTQNH+GVyI9grns7YPw1l8BxnIv60SsV1xhnTaiCLHQPPTwRB9q1E7NqRB8c7LORE
-otjhH7zhq9cvHxPlTVwrrwSSZsnbINdOxOF8nK7dHbHXtca2u5qc014m6JyuT1effTy5EHXNK7T+81zQ
-+GJuaC/Q0vuZTAdzY17DTmkfAk/Td5s0ZL6DOU/tJcPono3xEwAA//+XNInQ/AIAAA==
+H4sIAAAAAAAC/4yT32ucQBDH3/0rhm0hCVwV+mhU2tAjHIT0wXsr5bKno26jjuyMR8vF/72s3pkLvSaZ
+B935+uWzzA9N05EV2N/0vIDlt9V6k36/vz0el+v16v42XYAT083dKl0PUFhqQPnBcoetsN/8YnXteR7+
+Hkk5FrqvBfYeAEBnqeMQflwwteXFz8UoCjZdrQVDeBhzF1FBJGghqzVzrKZMQTIbRlNudkdHZjE3wp+Y
+epuhStLxHb7wu9jvwd3tTz4YBniCf0yRhspiEasPDqrgS1ab7NHvLLoaY+XUlNpSQbLMjUD9x5osCnQC
+T6+wGEVMW/J/ePPX5Hh8m0hncaN8Z1gci94BqkQ6DoOgNFL1Wz+jJsDG1IY0i7ZGdDBWWBi0nxWItiVK
+rDbbWrePCizWsWqJOmzHGX3dUi9nroyC3OyeJxgF01STKfUepm1oUCrKOTxsjItjuy+vTkQXNz37H7Ex
+cnmyqlIZ9l0Lrq5n87B4CTs0+E3gYeHPk+Y2v4J5/lFOGd70HLy/AQAA///cICeobwMAAA==
 `,
 	},
 

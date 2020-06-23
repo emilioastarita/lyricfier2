@@ -10,6 +10,7 @@ export default {
                 <a href="#edit" @click.prevent="editSong" >Edit lyric</a> |
                 <a href="#settings" @click.prevent="editSettings" >Settings</a> |
                 <a href="#songs" @click.prevent="songsList" >Songs</a> |
+                <a href="https://github.com/emilioastarita/lyricfier2" target="_blank" rel="noopener" >About</a> |
             </div>
         </footer>      
 `,
