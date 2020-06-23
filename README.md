@@ -29,12 +29,11 @@ sudo snap connect lyricfier:mpris spotify:spotify-mpris
 
 ### Install golang 
 
-In Ubuntu you can use snap
+In Ubuntu, you can use snap
 
 ```bash
-sudo snap install --classic --channel=1.11/stable go
+sudo snap install --classic --channel=1.14/stable go
 ```
-
 
 ### Install build dependencies 
 
@@ -43,11 +42,20 @@ sudo snap install --classic --channel=1.11/stable go
 sudo apt-get install libgtk-3-dev libappindicator3-dev libwebkit2gtk-4.0-dev
 ```
 
+Get `esc` utility 
+
+```bash
+go get -u github.com/mjibson/esc
+```
+
+
 ### Clone repo and build
 
 ```bash
 git clone git@github.com:emilioastarita/lyricfier2.git
-make build
+cd lyricfier2/
+# add go/bin directory to path
+PATH=$PATH:~/go/bin/ make build
 ```
 
 [Download latest release](https://github.com/emilioastarita/lyricfier2/releases/latest)
