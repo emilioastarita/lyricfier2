@@ -1,4 +1,4 @@
-.PHONY: clean run build release format releases release-linux release-windows release-darwin
+.PHONY: clean run build release format releases release-linux release-windows release-darwin test
 VERSION = $$(git describe --abbrev=0 --tags)
 VERSION_DATE = $$(git log -1 --pretty='%ad' --date=format:'%Y-%m-%d' $(VERSION))
 COMMIT_REV = $$(git rev-list -n 1 $(VERSION))
@@ -51,3 +51,5 @@ run: build
 clean:
 	rm $(BINARY_NAME)
 
+test:
+	$(GOTEST) ./...
