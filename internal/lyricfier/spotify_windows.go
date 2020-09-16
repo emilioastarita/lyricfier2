@@ -5,11 +5,11 @@ package lyricfier
 import (
 	"encoding/csv"
 	"fmt"
-	"path/filepath"
-	"os"
 	"golang.org/x/text/encoding/charmap"
 	"log"
+	"os"
 	"os/exec"
+	"path/filepath"
 	"strings"
 	"syscall"
 	"time"

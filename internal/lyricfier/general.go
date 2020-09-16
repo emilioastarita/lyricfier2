@@ -130,12 +130,14 @@ func (h *Main) ReadSettings() {
 		h.AppData.Settings = defaultSettings()
 		return
 	}
-	err = json.Unmarshal(val, h.AppData.Settings)
+	var p *Settings
+	err = json.Unmarshal(val, &p)
 	if err != nil {
-		fmt.Printf("error umarshalling saved settings %v\n", err)
+		fmt.Printf("error umarshalling saved settings: %v\n", err)
 		h.AppData.Settings = defaultSettings()
 		return
 	}
+	h.AppData.Settings = p;
 }
 
 func (h *Main) Search(done chan *SearchResult, artist string, title string) {

@@ -84,7 +84,7 @@ func (h *Server) routes(hub *Hub) {
 		}
 		settings, err := json.Marshal(s)
 		if err != nil {
-			fmt.Printf("could not marshal config json: %v\n", err)
+			fmt.Printf("Could not marshal config json: %v\n", err)
 			return c.JSON(http.StatusInternalServerError, h.appData)
 		}
 
