@@ -7,7 +7,6 @@ import VueRouter from "./vue-router.mjs";
 import {service} from "./Service.mjs";
 import {Bus, EDIT_SONG, SAVED_SONG, EDIT_SETTINGS, SAVED_SETTINGS, SONGS_LIST} from "./Events.mjs";
 
-
 const routes = [
     {path: '/', component: Connecting, name: 'connecting'},
     {path: '/view', component: SongView, name: 'view'},
@@ -73,6 +72,7 @@ export default {
             for (let prop of props) {
                 this.data[prop] = data[prop];
             }
+            this.updateDocumentTitle();
             if (this.$router.currentRoute.name === 'connecting' && this.data.song.title) {
                 this.$router.push({name: `view`});
             }
@@ -101,6 +101,13 @@ export default {
                 this.data.settings = settings;
             }
             this.$router.push({name: `view`});
+        },
+        updateDocumentTitle() {
+            if (this.data.song.title) {
+                document.title = `Lyricfier - ${this.data.song.title} - ${this.data.song.artist}`
+            } else {
+                document.title = `Lyricfier`;
+            }
         }
-    }
+    },
 }
